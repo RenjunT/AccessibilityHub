@@ -1,0 +1,11 @@
+.detail-chart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Set to the desired height, or keep as 100% if it's within a flex container */
+}
+  
+
+
+
+  

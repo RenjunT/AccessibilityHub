@@ -1,0 +1,88 @@
+/* Timeline CSS */
+.timeline-container {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .timeline-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px 0;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-left: 20px;
+  }
+  
+  .timeline-title-section {
+    text-align: center;
+  }
+  
+  .timeline-title-section h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .timeline-title-section p {
+    font-size: 16px;
+    color: #7f8c8d;
+  }
+  
+  .filter-button {
+    background-color: #3498db;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-right: 20px;
+  }
+  
+  .timeline-chart {
+    width: 100%;
+    max-width: 600px;
+    margin: 30px 0;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .timeline-footer {
+    width: 100%;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .contact-button {
+    background-color: #3498db;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .logo-placeholder {
+    font-size: 16px;
+    font-weight: bold;
+    color: #2c3e50;
+  }
+  
