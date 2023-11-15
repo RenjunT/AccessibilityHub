@@ -34,7 +34,7 @@ function Timeline() {
           <h1>Timeline</h1>
           <p>This is the accessibility score of PDFs in these repositories over recent years</p>
         </div>
-        <button className="filter-button">+ Filter</button>
+        <button className="filter-button">🔍+ Filter</button>
       </header>
       
       {/* Line Chart */}

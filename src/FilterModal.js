@@ -22,7 +22,7 @@ const FilterModal = ({ isOpen, onClose, onNavigate }) => {
   };
 
   const repositoryOptions = ['arXiv', 'PubMed', 'SpringerOpen', 'MedRxiv'];
-  const aspectOptions = ['Figure Alt Texts', 'Formular Alt Texts', 'Table Header', 'Heading Structure'];
+  const aspectOptions = ['Figure Alt Texts', 'Formular Alt Texts', 'Table Header'];
 
   if (!isOpen) return null;
 
@@ -45,7 +45,7 @@ const FilterModal = ({ isOpen, onClose, onNavigate }) => {
           </div>
           <div className="dropdown">
             <button className="dropdown-toggle" onClick={() => toggleDropdown('aspect')}>
-              Select Aspect
+              Select Criteria
             </button>
             {activeDropdown === 'aspect' && (
               <ul className="dropdown-menu">

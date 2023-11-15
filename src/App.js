@@ -48,7 +48,13 @@ function App() {
 
         <div className="score-calculation-instructions">
         <p>
-          If you would like to know how we calculate the scores, please check the details page by clicking on the "Details" button!
+          If you would like to know how we calculate the scores, please check the details page by 👉clicking on the "Details" button!
+        </p>
+        <p>
+          If you would like to know the change of their accessibility scores over recent years, please check the timeline page by 👉clicking on the "Check Timeline" button!
+        </p>
+        <p>
+          If you would like to know the score from specific repository or accessibility criteria, please try out filter function by 👉clicking on the 🔍 button!
         </p>
         </div>
         
@@ -84,7 +90,7 @@ function App() {
         <footer className="footer">
           <p>Have any problems with our APP?</p>
           <a href="#" className="App-link">Contact Us</a>
-          <p>Data Privacy Statement</p>
+          <p>Accessibility Hub does not collect or store any personal information from you.</p>
           <p>LOGO?</p>
         </footer>
     </div>

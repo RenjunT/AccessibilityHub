@@ -14,7 +14,10 @@ const fetchDetails = (id) => {
       // ... rest of data
     ],
     'pubMed': [
-      // ... specific data for pubMed
+      { year: 2016, formula: 40, figure: 24, table: 24 },
+      { year: 2017, formula: 30, figure: 13, table: 22 },
+      { year: 2018, formula: 60, figure: 10, table: 23 }
+      
     ],
     // ... other datasets
   };
@@ -25,6 +28,7 @@ const fetchDetails = (id) => {
 const DetailsPage = () => {
   let { id } = useParams();
   const [detailsData, setDetailsData] = useState([]);
+  const matterhornProtocolUrl = "https://www.pdflib.com/pdf-knowledge-base/pdfua/matterhorn-protocol/"; 
 
   useEffect(() => {
     const data = fetchDetails(id);
@@ -41,10 +45,26 @@ const DetailsPage = () => {
                 <h2>{id}</h2>
                 <p>This is the detail score fraction from {id}.</p>
               </div>
-              <button className="filter-button">+ Filter</button>
+              <button className="filter-button">🔍+ Filter</button>
             </div>
           </div>
         </header>
+
+      <section className="scoring-explanation">
+        <h3>Understanding the Accessibility Score</h3>
+        <p>
+          Our scoring mechanism evaluates the accessibility of the PDFs based on 9 key criteria, 
+          divided into 2 categories: document properties and object properties according to the 
+           <a href={matterhornProtocolUrl} target="_blank" rel="noopener noreferrer"> Matterhorn Protocol</a>. Document properties include 
+          language specifier, tagging suspects, PDF/UA identifier, heading order, and metadata title. Object 
+          properties assess whether content is marked correctly, figures have alt text, tables include headers, 
+          and formulas have alt text. 
+          
+          Each property contributes equally within its category to a subtotal score. 
+          The document properties make up 60% of the final score, while object properties account for 40%. This 
+          weighted approach ensures a balanced assessment of your document's accessibility.
+        </p>
+      </section>
       
       <div className="detail-chart">
       <BarChart width={800} height={450} data={detailsData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>

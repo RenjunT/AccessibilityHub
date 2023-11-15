@@ -5,13 +5,56 @@
   }
   
   .page-header {
-    /* Add your styles for the header */
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFFFF;
   }
   
+  .logo-container {
+    background-color: #007BFF; /* This is a blue color, adjust as needed */
+    padding: 10px;
+    color: white;
+    text-align: center;
+  }
+
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .header-actions {
+    display: flex;
+    align-items: center;
+  }
+  
+  .filter-button {
+    background-color: #E9ECEF; /* Light gray background */
+    border: none;
+    padding: 5px 10px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  
+  .filter-chip {
+    background-color: #E9ECEF; /* Light gray background */
+    padding: 5px 10px;
+    border-radius: 15px; /* Rounded corners for the chip */
+  }
+
   .main-content {
     flex-grow: 1;
-    /* Add your styles for the main content area */
-    /* This is where you would style your charts/graphs/tables etc. */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .chart-container {
+    width: 60%; /* Adjust as needed */
+    height: 400px; /* Adjust as needed */
+    
   }
   
   .page-footer {
