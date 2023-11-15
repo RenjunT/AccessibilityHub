@@ -26,7 +26,8 @@
   
   .modal-actions {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
+    align-items: flex-end;
     margin-top: 20px;
   }
   

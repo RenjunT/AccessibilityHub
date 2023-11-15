@@ -1,0 +1,53 @@
+.header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffffff;
+    border-bottom: solid 2px #2196f3;
+    position: relative;
+  }
+  
+  .logo-container {
+    background-color: #2196f3;
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin-right: 20px;
+    text-align: left;
+  }
+  
+  .logo {
+    color: #ffffff;
+    font-weight: bold;
+    display:block;
+  }
+  
+  .header-content {
+    flex-grow: 1;
+  }
+  
+  .header-content h1 {
+    margin-right: 10px;
+    color: #000000;
+  }
+  
+  .header-content p {
+    margin-left: 0;
+    color: #000000;
+  }
+  
+  .filter-container {
+    bottom: 5px; /* Half the height of the button to move it down outside of the header */
+    transform: translateX(-50%); /* Offset the container by half its width to truly center it */
+  /* Additional styles as required */
+  }
+  
+  .filter-button {
+    background-color: #ffffff;
+    border: 2px solid #2196f3;
+    border-radius: 20px;
+    padding: 5px 40px;
+    width: 200px;
+    font-size: larger;
+    cursor: pointer;
+  }
+  

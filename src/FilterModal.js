@@ -1,14 +1,27 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './FilterModal.css'; // Make sure to include your CSS styles
 
-const FilterModal = ({ isOpen, onClose }) => {
+const FilterModal = ({ isOpen, onClose, onNavigate }) => {
   const [activeDropdown, setActiveDropdown] = useState(null);
-
+  const navigate = useNavigate();
   const toggleDropdown = (dropdown) => {
     setActiveDropdown(activeDropdown === dropdown ? null : dropdown);
   };
+  const handleDropdownItemClick = (option) => {
+    // Modify this function to navigate to the correct path
+    if (option === 'Formular Alt Texts') {
+      navigate('/formular-alt-texts'); // Navigate to the FormularAltTextsPage
+    } 
+    
+    else {
+      
+      navigate(`/details/${option}`);
+    }
+    onClose();
+  };
 
-  const repositoryOptions = ['arXiv', 'PubMed', 'bioRiv', 'MedRxiv'];
+  const repositoryOptions = ['arXiv', 'PubMed', 'SpringerOpen', 'MedRxiv'];
   const aspectOptions = ['Figure Alt Texts', 'Formular Alt Texts', 'Table Header', 'Heading Structure'];
 
   if (!isOpen) return null;
@@ -25,7 +38,7 @@ const FilterModal = ({ isOpen, onClose }) => {
             {activeDropdown === 'repository' && (
               <ul className="dropdown-menu">
                 {repositoryOptions.map((option, index) => (
-                  <li key={index} className="dropdown-item">{option}</li>
+                  <li key={index} className="dropdown-item" onClick={() => handleDropdownItemClick(option)}>{option}</li>
                 ))}
               </ul>
             )}
@@ -37,7 +50,7 @@ const FilterModal = ({ isOpen, onClose }) => {
             {activeDropdown === 'aspect' && (
               <ul className="dropdown-menu">
                 {aspectOptions.map((option, index) => (
-                  <li key={index} className="dropdown-item">{option}</li>
+                  <li key={index} className="dropdown-item"onClick={() => handleDropdownItemClick(option)}>{option}</li>
                 ))}
               </ul>
             )}
@@ -45,7 +58,7 @@ const FilterModal = ({ isOpen, onClose }) => {
         </div>
         <div className="modal-actions">
           <button onClick={onClose}>Cancel</button>
-          <button onClick={onClose}>Apply</button>
+          
         </div>
       </div>
     </div>

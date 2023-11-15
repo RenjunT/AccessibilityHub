@@ -48,6 +48,16 @@ body, html {
   margin-left: 600px; /* space between text and button */
 }
 
+.score-calculation-instructions {
+  margin: 20px;
+  padding: 10px;
+  /* Add any additional styling you need here */
+}
+
+.score-calculation-instructions p {
+  /* Style your paragraph text as needed */
+}
+
 .repo-list {
   margin: 40px auto;
   padding: 10px;
@@ -55,23 +65,36 @@ body, html {
   width: 70%;  /* Adjust the width as required */
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
 
 }
 
 .repo-item {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   width: 100%;
   margin-bottom: 30px;
 }
+
+.repo-label {
+  width: 150px; /* Adjust this to the width you need */
+  margin-right: 20px; /* Or any spacing you prefer */
+}
+
+.progress-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-grow: 1;
+  margin-right: 20px;
+} 
 
 .progress-bar {
   background: #E0E0E0;
   width: 70%;
   height: 20px;
-  margin-left: 0;
+  margin-right: 60px;
 
 }
 
@@ -86,21 +109,6 @@ body, html {
   justify-content: center;
   padding: 20px 0; /* Adjust padding as needed */
 }
-
-/* .timeline-btn {
-  position: absolute;  Absolute positioning relative to the nearest positioned ancestor 
-  bottom: 300px;       Position 10px from the bottom of the content div 
-  right: 700px;         Position 10px from the right of the content div 
-  padding: 10px 20px;
-  background-color: #2196F3;
-  border: none;
-  border-radius: 5px;
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-
-   Adjust the styles as required 
-}*/
 
 .timeline-btn:hover {
   background-color: #187ABD;

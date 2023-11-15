@@ -1,0 +1,32 @@
+.formular-page-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  .page-header {
+    /* Add your styles for the header */
+  }
+  
+  .main-content {
+    flex-grow: 1;
+    /* Add your styles for the main content area */
+    /* This is where you would style your charts/graphs/tables etc. */
+  }
+  
+  .page-footer {
+    padding: 20px;
+    background-color: #f5f5f5; /* Example footer background color */
+    text-align: right; /* Aligns the button to the right */
+  }
+  
+  .back-button {
+    padding: 10px 20px;
+    background-color: #007bff; /* Example button background color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  

@@ -1,11 +1,13 @@
 import React, { useState, useEffect }from 'react';
 import './App.css';
 import './FilterModal.css'
+import FormularAltTextsPage from './FormularAltTextsPage';
 import {useNavigate} from 'react-router-dom';
 import Papa from 'papaparse';
 import Timeline from './Timeline'
 import DetailsPage from './DetailsPage'
 import FilterModal from './FilterModal'
+import Header from './components/Header'
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 
@@ -26,6 +28,8 @@ function App() {
     { id: 'MedRxiv',name: 'MedRxiv', progress: 42 }
   ];
   const navigate = useNavigate();
+  const onNavigate = (path) => {
+    navigate(path);};
   
 
   
@@ -35,27 +39,25 @@ function App() {
         <Routes>
           <Route path="/timeline" element={<Timeline />} />
           <Route path="/details/:id" element={<DetailsPage />} />
+          <Route path="/formular-alt-texts" element={<FormularAltTextsPage />} />
         </Routes>
-        <header className="App-header">
-          <div className="header-content">
-            <div className="App-logo">Accessibility Hub</div>
-            <div className="intro-and-filter">
-              <div className="intro-text">
-                <p>Welcome!</p>
-                <p>This is the accessibility score of PDFs in these repositories</p>
-              </div>
-              <button onClick={toggleFilterModal} className="filter-button">+ Filter</button>
-            </div>
-          </div>
-        </header>
+       
+      <Header onFilterClick={toggleFilterModal}/>
 
         <div classname="content">
+
+        <div className="score-calculation-instructions">
+        <p>
+          If you would like to know how we calculate the scores, please check the details page by clicking on the "Details" button!
+        </p>
+        </div>
         
           <div className="repo-list">
             {/* Map through the repositories and display each one */}
             {repositories.map((repo, index) => (
               <div key={repo.id} className="repo-item">
-                <span>{repo.name}</span> {/* Repository Name */}
+                <div className="repo-label">{repo.name}</div>
+                <div className="progress-container">
                 <div className="progress-bar">
                   {/* Dynamically set the width of the progress bar based on the progress value */}
                   <div className="progress" style={{ width: `${repo.progress}%` }}></div>
@@ -67,6 +69,7 @@ function App() {
                 } else {
                   alert('Details for other repositories coming soon!');}
                 }}>Details</button>
+                </div>
              </div>
         ))}
           
@@ -76,7 +79,7 @@ function App() {
         </div>
        </div>
 
-       <FilterModal isOpen={isFilterModalOpen} onClose={toggleFilterModal} />
+       <FilterModal isOpen={isFilterModalOpen} onClose={toggleFilterModal} onNavigate={onNavigate} />
 
         <footer className="footer">
           <p>Have any problems with our APP?</p>
