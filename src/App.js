@@ -5,7 +5,7 @@ import FormularAltTextsPage from './FormularAltTextsPage';
 import Timeline from './Timeline'
 import DetailsPage from './DetailsPage'
 import ScoreExplanationPage from './ScoreExplanationPage';
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { HashRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 
 
