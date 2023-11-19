@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 import './DetailsPage.css';
 // Simulated function to fetch details based on an ID
@@ -28,6 +29,7 @@ const fetchDetails = (id) => {
 const DetailsPage = () => {
   let { id } = useParams();
   const [detailsData, setDetailsData] = useState([]);
+  const navigate = useNavigate();
   const matterhornProtocolUrl = "https://www.pdflib.com/pdf-knowledge-base/pdfua/matterhorn-protocol/"; 
 
   useEffect(() => {
@@ -83,7 +85,7 @@ const DetailsPage = () => {
           <p>Have any problems with our APP?</p>
           <a href="#" className="App-link">Contact Us</a>
           <p>Data Privacy Statement</p>
-          <p>LOGO?</p>
+          <button onClick={()=> navigate('/score-explanation')}>Learn How Scoring Works</button>
       </footer>
     </div>
   );

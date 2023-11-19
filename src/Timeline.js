@@ -1,10 +1,10 @@
-
+import { useNavigate } from 'react-router-dom';
 import React from 'react';
 import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip } from 'recharts';
-import './Timeline.css';  // Assuming you will create a separate CSS file for styling
+import './Timeline.css';  
 
 // Sample data for the line chart
-const data = [
+const data = [ 
   /* Sample data format */
   { year: '2013', arXiv: 48.13, PubMed: 50 },
   { year: '2014', arXiv: 55, PubMed: 49 },
@@ -24,8 +24,11 @@ const data = [
   /* ... Add more data points as needed */
 ];
 
+
 function Timeline() {
+  const navigate = useNavigate();
   return (
+    
     <div className="timeline-container">
       {/* Header */}
       <header className="timeline-header">
@@ -53,7 +56,8 @@ function Timeline() {
       <footer className="timeline-footer">
         <button className="contact-button">Contact Us</button>
         <p>Data Privacy Statement</p>
-        <div className="logo-placeholder">LOGO?</div>
+        
+        <button onClick={()=> navigate('/score-explanation')}>Learn How Scoring Works</button>
       </footer>
     </div>
   );

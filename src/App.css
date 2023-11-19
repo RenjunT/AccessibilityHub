@@ -48,15 +48,26 @@ body, html {
   margin-left: 600px; /* space between text and button */
 }
 
+.dropdown-buttons-container {
+  display: flex;
+  justify-content: center; 
+  margin-top: 20px; 
+}
+
+/* If you also want to add some space between the buttons */
+.dropdown-buttons-container button {
+  margin: 0 10px; 
+}
+
+
+
 .score-calculation-instructions {
   margin: 20px;
   padding: 10px;
   /* Add any additional styling you need here */
 }
 
-.score-calculation-instructions p {
-  /* Style your paragraph text as needed */
-}
+
 
 .repo-list {
   margin: 40px auto;
