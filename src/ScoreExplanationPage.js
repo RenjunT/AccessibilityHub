@@ -1,15 +1,13 @@
 import React from 'react';
-import './ScoreExplanationPage.css'; // Import your CSS file
+import './ScoreExplanationPage.css'; 
+import Header from './components/Header';
 import {useNavigate} from 'react-router-dom';
 const ScoreExplanationPage = () => {
     const matterhornProtocolUrl = "https://www.pdflib.com/pdf-knowledge-base/pdfua/matterhorn-protocol/";
     const navigate = useNavigate();
   return (
     <div className="score-explanation-container">
-      <header className="app-header">
-        <h1>Accessibility Hub</h1>
-        {/* Add any header elements such as navigation or logos */}
-      </header>
+      <Header/>
       <main className="main-content">
         <section className="explanation-section">
           <h2>How we score the PDFs</h2>
@@ -22,17 +20,18 @@ const ScoreExplanationPage = () => {
           
           Each property contributes equally within its category to a subtotal score. 
           The document properties make up 60% of the final score, while object properties account for 40%. This 
-          weighted approach ensures a balanced assessment of your document's accessibility.</p>
+          weighted approach ensures a balanced assessment of PDF files' accessibility.</p>
           
         </section>
         
       </main>
-      <footer className="app-footer">
-      <p>Have any problems with our APP?</p>
-          <a href="#" className="App-link">Contact Us</a>
+      
+      <footer className="footer">
+          <p>Have any problems with our APP?</p>
+          <a href="mailto:renjun.tang@uzh.ch?subject=Feedback%20on%20Accessibility%20Hub&body=Hi%20there,%0D%0A%0D%0AI%20wanted%20to%20share%20some%20feedback..." className="App-link">Contact Us</a>
           <p>Accessibility Hub does not collect or store any personal information from you.</p>
-          <button onClick={()=> navigate('/score-explanation')}>Learn How Scoring Works</button>
-      </footer>
+          
+        </footer>
     </div>
   );
 };

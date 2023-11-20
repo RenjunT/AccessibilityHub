@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import {useNavigate} from 'react-router-dom';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 import './DetailsPage.css';
+import Header from './components/Header';
 // Simulated function to fetch details based on an ID
 const fetchDetails = (id) => {
   // This is where you would fetch data from a server or select from a local source
@@ -39,34 +40,13 @@ const DetailsPage = () => {
 
   return (
     <div className="details-page">
-      <header className="App-header">
-          <div className="header-content">
-            <div className="App-logo">Accessibility Hub</div>
-            <div className="intro-and-filter">
-              <div className="intro-text">
+      
+      <Header/>
+
+        <div className="intro-text">
                 <h2>{id}</h2>
                 <p>This is the detail score fraction from {id}.</p>
               </div>
-              <button className="filter-button">🔍+ Filter</button>
-            </div>
-          </div>
-        </header>
-
-      <section className="scoring-explanation">
-        <h3>Understanding the Accessibility Score</h3>
-        <p>
-          Our scoring mechanism evaluates the accessibility of the PDFs based on 9 key criteria, 
-          divided into 2 categories: document properties and object properties according to the 
-           <a href={matterhornProtocolUrl} target="_blank" rel="noopener noreferrer"> Matterhorn Protocol</a>. Document properties include 
-          language specifier, tagging suspects, PDF/UA identifier, heading order, and metadata title. Object 
-          properties assess whether content is marked correctly, figures have alt text, tables include headers, 
-          and formulas have alt text. 
-          
-          Each property contributes equally within its category to a subtotal score. 
-          The document properties make up 60% of the final score, while object properties account for 40%. This 
-          weighted approach ensures a balanced assessment of your document's accessibility.
-        </p>
-      </section>
       
       <div className="detail-chart">
       <BarChart width={800} height={450} data={detailsData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
@@ -84,7 +64,7 @@ const DetailsPage = () => {
       <footer className="footer">
           <p>Have any problems with our APP?</p>
           <a href="#" className="App-link">Contact Us</a>
-          <p>Data Privacy Statement</p>
+          <p>Accessibility Hub does not collect or store any personal information from you.</p>
           <button onClick={()=> navigate('/score-explanation')}>Learn How Scoring Works</button>
       </footer>
     </div>

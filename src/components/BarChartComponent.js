@@ -10,10 +10,10 @@ const data = {
       
       data: [90, 75, 60, 42], // The data points for the bars
       backgroundColor: [
-        'rgba(75, 192, 192, 1)',
         'rgba(54, 162, 235, 1)',
-        'rgba(153, 102, 255, 1)',
-        'rgba(255, 159, 64, 1)'
+        'rgba(54, 162, 235, 1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(54, 162, 235, 1)'
       ],
       borderColor: [
         'rgba(75, 192, 192, 1)',

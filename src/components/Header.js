@@ -7,9 +7,10 @@ const Header = () => {
       <div className="logo-container">
         <span className="logo">Accessibility Hub</span>
       </div>
+
       <div className="header-content">
-        <h1>Welcome!</h1>
-        <p>This is the accessibility score of PDFs in these repositories</p>
+        <h1></h1>
+        <p></p>
       </div>
     </div>
   );

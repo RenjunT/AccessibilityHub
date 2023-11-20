@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import React from 'react';
 import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip } from 'recharts';
 import './Timeline.css';  
+import Header from './components/Header';
 
 // Sample data for the line chart
 const data = [ 
@@ -31,14 +32,14 @@ function Timeline() {
     
     <div className="timeline-container">
       {/* Header */}
-      <header className="timeline-header">
-        <div className="logo">Accessibility Hub</div>
+      <Header/>
+        
         <div className="timeline-title-section">
-          <h1>Timeline</h1>
+          <h2>Timeline</h2>
           <p>This is the accessibility score of PDFs in these repositories over recent years</p>
         </div>
-        <button className="filter-button">🔍+ Filter</button>
-      </header>
+        
+      
       
       {/* Line Chart */}
       <div className="timeline-chart">
@@ -51,15 +52,15 @@ function Timeline() {
           <Line type="monotone" dataKey="PubMed" stroke="#82ca9d" />
         </LineChart>
       </div>
+      <footer className="footer">
+          <p>Have any problems with our APP?</p>
+          <a href="mailto:renjun.tang@uzh.ch?subject=Feedback%20on%20Accessibility%20Hub&body=Hi%20there,%0D%0A%0D%0AI%20wanted%20to%20share%20some%20feedback..." className="App-link">Contact Us</a>
+          <p>Accessibility Hub does not collect or store any personal information from you.</p>
+          <button onClick={()=> navigate('/score-explanation')}>Learn How Scoring Works</button>
+        </footer>
       
-      {/* Footer */}
-      <footer className="timeline-footer">
-        <button className="contact-button">Contact Us</button>
-        <p>Data Privacy Statement</p>
-        
-        <button onClick={()=> navigate('/score-explanation')}>Learn How Scoring Works</button>
-      </footer>
     </div>
+    
   );
 }
 

@@ -1,11 +1,11 @@
-/* Timeline CSS */
+
 .timeline-container {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    padding: 20px;
+    background-color: #ffffff;
+    
     display: flex;
     flex-direction: column;
-    align-items: center;
+    
   }
   
   .timeline-header {
@@ -19,25 +19,11 @@
     box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
   }
   
-  .logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #2c3e50;
-    margin-left: 20px;
-  }
-  
-  .timeline-title-section {
-    text-align: center;
-  }
-  
-  .timeline-title-section h1 {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
+
   
   .timeline-title-section p {
     font-size: 16px;
-    color: #7f8c8d;
+    color: #0a0b0b;
   }
   
   .filter-button {
@@ -57,18 +43,18 @@
     background-color: #ffffff;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+    align-self: center;
   }
   
-  .timeline-footer {
+  .footer {
+    background-color: #2196F3;
+    /*padding: 40px 20px;*/
+    text-align: center;
+    color: white;
+    /*min-height: 50px;*/
+    
+    bottom: 0;
     width: 100%;
-    padding: 20px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
   }
   
   .contact-button {

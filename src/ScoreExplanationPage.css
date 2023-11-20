@@ -1,19 +1,19 @@
-.score-explanation-container {
+/*.score-explanation-container {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    font-family: 'Arial', sans-serif; /* Match the font to your design */
-    color: #333; /* Adjust the color to match your design */
+    font-family: 'Arial', sans-serif; 
+    color: #333; 
   }
   
-  .app-header {
-    background-color: #2196f3; /* Match the header background color */
+  /*.app-header {
+    background-color: #2196f3; /* Match the header background color 
     padding: 1rem;
     color: white;
     display: flex;
     align-items: center;
-    /* Add other header styles such as box-shadow if needed */
-  }
+    /* Add other header styles such as box-shadow if needed 
+  }*/
   
   .main-content {
     padding: 2rem;
