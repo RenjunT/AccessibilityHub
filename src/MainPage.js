@@ -40,7 +40,7 @@ const MainPage = () => {
     <div className="MainPage">
         <Header />
 
-        <div classname="content">
+        <div className="content">
         <h2>Welcome to Accessibility Hub! </h2>
         <p>Explore the accessibility details from these repositories, understand scoring, and more. Navigate through the app using the options below.</p>
 
@@ -116,7 +116,7 @@ const MainPage = () => {
           </section>
 
         <section className="additional-resources">
-          <h3>Additional Resources</h3>
+          <h3>Repository Trends</h3>
           <p>View the score changes over recent years for these repositories.</p>
           <div className="timeline-button-container">
           <button className="timeline-btn" onClick={() => navigate('/timeline')}>Check Timeline</button>

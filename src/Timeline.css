@@ -1,10 +1,11 @@
 
 .timeline-container {
-    font-family: Arial, sans-serif;
+    
     background-color: #ffffff;
     
     display: flex;
     flex-direction: column;
+   
     
   }
   
@@ -13,7 +14,6 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    padding: 20px 0;
     background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
@@ -21,9 +21,10 @@
   
 
   
-  .timeline-title-section p {
+  .timeline-title-section  {
     font-size: 16px;
     color: #0a0b0b;
+    padding: 30px;
   }
   
   .filter-button {

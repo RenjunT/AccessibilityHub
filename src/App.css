@@ -6,9 +6,9 @@ body, html {
 .content {
   position: relative;
   display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center;     /* Center vertically */
-  height: 150%;
+  flex-direction: column; /* Stack flex items vertically */
+  height: auto; 
+  padding: 30px; /* Add horizontal padding */
 }
 
 .App {

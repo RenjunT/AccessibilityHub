@@ -36,7 +36,7 @@ function Timeline() {
         
         <div className="timeline-title-section">
           <h2>Timeline</h2>
-          <p>This is the accessibility score of PDFs in these repositories over recent years</p>
+          <p>This is the accessibility score of PDFs in these repositories over recent years.</p>
         </div>
         
       
