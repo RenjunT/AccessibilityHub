@@ -22,25 +22,34 @@
     display:block;
   }
   
-  .header-content {
-    flex-grow: 1;
+  .header-navigation {
+    display: flex;
+    align-items: center;
   }
   
-  .header-content h1 {
-    margin-right: 10px;
-    color: #000000;
+  .nav-btn {
+    margin-left: 10px;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.25rem;
+    background-color: #fff;
+    color: #2196f3;
+    cursor: pointer;
   }
   
-  .header-content p {
-    margin-left: 0;
-    color: #000000;
+  .nav-btn:hover {
+    background-color: #e3f2fd;
   }
   
-  .filter-container {
-    bottom: 5px; /* Half the height of the button to move it down outside of the header */
-    transform: translateX(-50%); /* Offset the container by half its width to truly center it */
-  /* Additional styles as required */
+  /* Adjust the dropdown styles if necessary */
+  .dropdown-menu {
+    /* Styles for dropdown menu */
   }
+  
+  .dropdown-item {
+    /* Styles for dropdown items */
+  }
+
   
   .filter-button {
     background-color: #ffffff;

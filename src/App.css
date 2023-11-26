@@ -55,8 +55,18 @@ body, html {
 }
 
 
-.dropdown-buttons-container button {
+.dropdown-buttons-container button,
+.dropdown-buttons-container .dropdown-toggle {
   margin: 0 10px; 
+  background-color: #2196f3; /* Example background color */
+  color: white; /* Example text color */
+  border: none; /* Example border removal */
+  padding: .375rem .75rem; /* Example padding */
+  border-radius: .25rem;
+}
+
+.dropdown-spacing {
+  margin: 0 10px; /* Adjust the 10px to the amount of space you want */
 }
 
 

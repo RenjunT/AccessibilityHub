@@ -4,18 +4,18 @@ import './App.css';
 import './FilterModal.css'
 import FormularAltTextsPage from './FormularAltTextsPage';
 import {useNavigate} from 'react-router-dom';
+import Dropdown from 'react-bootstrap/Dropdown';
 import Timeline from './Timeline'
 import DetailsPage from './DetailsPage'
 import ScoreExplanationPage from './ScoreExplanationPage';
 import FilterModal from './FilterModal'
 import Header from './components/Header'
-import Dropdown from './components/Dropdown';
+
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 
 const MainPage = () => {
-    const [showRepoDropdown, setShowRepoDropdown] = useState(false);
-    const [showCriteriaDropdown, setShowCriteriaDropdown] = useState(false);
+    
     const navigate = useNavigate();
     const repositories = [
         { id: 'arXiv', name: 'arXiv', score: 46.13 },
@@ -23,54 +23,30 @@ const MainPage = () => {
         { id: 'SpringerOpen', name: 'SpringerOpen', score: 64 },
         { id: 'MedRxiv',name: 'MedRxiv', score: 42 }
       ];
+      const criteriaOptions = ['Figure Alt Texts', 'Formular Alt Texts', 'Table Header'];
       const onNavigate = (path) => {
         navigate(path);};
         
         const handleRepoSelect = (repo) => {
-          setShowRepoDropdown(false); // Close the dropdown
+          
           navigate(`/details/${repo}`); // Navigate to the repository page
         };
       
         const handleCriteriaSelect = (criteria) => {
-          setShowCriteriaDropdown(false); // Close the dropdown
+          
           navigate('/formular-alt-texts');
         };
 
   return (
     <div className="MainPage">
-        <Header />
+        <Header 
+        repositories={repositories} 
+        criteriaOptions={criteriaOptions} 
+        handleRepoSelect={handleRepoSelect} 
+        handleCriteriaSelect={handleCriteriaSelect} 
+      />
 
         <div className="content">
-        <h2>Welcome to Accessibility Hub! </h2>
-        <p>Explore the accessibility details from these repositories, understand scoring, and more. Navigate through the app using the options below.</p>
-
-        <div className="dropdown-buttons-container">
-        <button onClick={()=> navigate('/score-explanation')}>Learn How Scoring Works</button>
-        {/* Repository Dropdown */}
-        <button onClick={() => setShowRepoDropdown(!showRepoDropdown)}>
-          Select Repository
-        </button>
-        {showRepoDropdown && (
-          <Dropdown
-            title="Select Repository"
-            options={['arXiv', 'PubMed', 'SpringerOpen', 'MedRxiv']}
-            onSelect={handleRepoSelect}
-          />
-        )}
-
-        {/* Criteria Dropdown */}
-        <button onClick={() => setShowCriteriaDropdown(!showCriteriaDropdown)}>
-          Select Criteria
-        </button>
-        {showCriteriaDropdown && (
-          <Dropdown
-            title="Select Criteria"
-            options={['Figure Alt Texts', 'Formular Alt Texts', 'Table Header']}
-            onSelect={handleCriteriaSelect}
-          />
-        )}
-      </div>
-
         <section className="chart-section">
           <h3>Repository Score Overview</h3>
           <p>View the accessibility scores of various repositories at a glance. Hover over the bars for more details.</p>
