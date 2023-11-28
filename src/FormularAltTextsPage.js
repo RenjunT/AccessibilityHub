@@ -5,11 +5,32 @@ import BarChartComponent from './components/BarChartComponent';
 import { useNavigate } from 'react-router-dom';
 
 const FormularAltTextsPage = () => {
-  const navigate=useNavigate;
+  const navigate=useNavigate();
+  const repositories = [
+    { id: 'arXiv', name: 'arXiv', score: 46.13 },
+    { id: 'PubMed', name: 'PubMed', score: 49.64 },
+    { id: 'SpringerOpen', name: 'SpringerOpen', score: 64 },
+    { id: 'MedRxiv',name: 'MedRxiv', score: 42 }
+  ];
+  const criteriaOptions = ['Figure Alt Texts', 'Formular Alt Texts', 'Table Header'];
+  const handleRepoSelect = (repo) => {
+          
+    navigate(`/details/${repo}`); // Navigate to the repository page
+  };
+
+  const handleCriteriaSelect = (criteria) => {
+    
+    navigate('/formular-alt-texts');
+  };
   return (
     <div className="formular-page-container">
       
-      <Header/>
+      <Header 
+        repositories={repositories} 
+        criteriaOptions={criteriaOptions} 
+        handleRepoSelect={handleRepoSelect} 
+        handleCriteriaSelect={handleCriteriaSelect} 
+      />
       
       <div className="header-content">
           <h2>Accessibility Criteria: Formular Alternative Texts</h2>

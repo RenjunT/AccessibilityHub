@@ -8,7 +8,7 @@ const Header = ({ repositories, criteriaOptions, handleRepoSelect, handleCriteri
   return (
     <div className="header">
       <div className="logo-container">
-        <span className="logo">Accessibility Hub</span>
+        <span onClick={() => navigate('/')} className="logo">Accessibility Hub</span>
       </div>
       <nav className="header-navigation">
           <button onClick={() => navigate('/score-explanation')} className="nav-btn">

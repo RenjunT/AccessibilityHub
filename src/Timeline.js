@@ -28,11 +28,32 @@ const data = [
 
 function Timeline() {
   const navigate = useNavigate();
+  const repositories = [
+    { id: 'arXiv', name: 'arXiv', score: 46.13 },
+    { id: 'PubMed', name: 'PubMed', score: 49.64 },
+    { id: 'SpringerOpen', name: 'SpringerOpen', score: 64 },
+    { id: 'MedRxiv',name: 'MedRxiv', score: 42 }
+  ];
+  const criteriaOptions = ['Figure Alt Texts', 'Formular Alt Texts', 'Table Header'];
+  const handleRepoSelect = (repo) => {
+          
+    navigate(`/details/${repo}`); // Navigate to the repository page
+  };
+
+  const handleCriteriaSelect = (criteria) => {
+    
+    navigate('/formular-alt-texts');
+  };
   return (
     
     <div className="timeline-container">
       {/* Header */}
-      <Header/>
+      <Header 
+        repositories={repositories} 
+        criteriaOptions={criteriaOptions} 
+        handleRepoSelect={handleRepoSelect} 
+        handleCriteriaSelect={handleCriteriaSelect} 
+      />
         
         <div className="timeline-title-section">
           <h2>Timeline</h2>

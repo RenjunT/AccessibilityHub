@@ -5,9 +5,33 @@ import {useNavigate} from 'react-router-dom';
 const ScoreExplanationPage = () => {
     const matterhornProtocolUrl = "https://www.pdflib.com/pdf-knowledge-base/pdfua/matterhorn-protocol/";
     const navigate = useNavigate();
+    const repositories = [
+      { id: 'arXiv', name: 'arXiv', score: 46.13 },
+      { id: 'PubMed', name: 'PubMed', score: 49.64 },
+      { id: 'SpringerOpen', name: 'SpringerOpen', score: 64 },
+      { id: 'MedRxiv',name: 'MedRxiv', score: 42 }
+    ];
+    const criteriaOptions = ['Figure Alt Texts', 'Formular Alt Texts', 'Table Header'];
+    const onNavigate = (path) => {
+      navigate(path);};
+      
+      const handleRepoSelect = (repo) => {
+        
+        navigate(`/details/${repo}`); // Navigate to the repository page
+      };
+    
+      const handleCriteriaSelect = (criteria) => {
+        
+        navigate('/formular-alt-texts');
+      };
   return (
     <div className="score-explanation-container">
-      <Header/>
+      <Header 
+        repositories={repositories} 
+        criteriaOptions={criteriaOptions} 
+        handleRepoSelect={handleRepoSelect} 
+        handleCriteriaSelect={handleCriteriaSelect} 
+      />
       <main className="main-content">
         <section className="explanation-section">
           <h2>How we score the PDFs</h2>

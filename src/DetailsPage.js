@@ -38,10 +38,33 @@ const DetailsPage = () => {
     setDetailsData(data);
   }, [id]);
 
+  const repositories = [
+    { id: 'arXiv', name: 'arXiv', score: 46.13 },
+    { id: 'PubMed', name: 'PubMed', score: 49.64 },
+    { id: 'SpringerOpen', name: 'SpringerOpen', score: 64 },
+    { id: 'MedRxiv',name: 'MedRxiv', score: 42 }
+  ];
+  const criteriaOptions = ['Figure Alt Texts', 'Formular Alt Texts', 'Table Header'];
+  const handleRepoSelect = (repo) => {
+          
+    navigate(`/details/${repo}`); // Navigate to the repository page
+  };
+
+  const handleCriteriaSelect = (criteria) => {
+    
+    navigate('/formular-alt-texts');
+  };
+
+
   return (
     <div className="details-page">
       
-      <Header/>
+      <Header 
+        repositories={repositories} 
+        criteriaOptions={criteriaOptions} 
+        handleRepoSelect={handleRepoSelect} 
+        handleCriteriaSelect={handleCriteriaSelect} 
+      />
 
         <div className="intro-text">
                 <h2>{id}</h2>

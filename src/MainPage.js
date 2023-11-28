@@ -1,11 +1,12 @@
 import React, { useState, useEffect }from 'react';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LabelList } from 'recharts';
 import './App.css';
 import './FilterModal.css'
 import FormularAltTextsPage from './FormularAltTextsPage';
 import {useNavigate} from 'react-router-dom';
 import Dropdown from 'react-bootstrap/Dropdown';
 import Timeline from './Timeline'
+import SimpleTimeline from './components/SimpleTimeline';
 import DetailsPage from './DetailsPage'
 import ScoreExplanationPage from './ScoreExplanationPage';
 import FilterModal from './FilterModal'
@@ -14,9 +15,15 @@ import Header from './components/Header'
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 
+    
 const MainPage = () => {
     
     const navigate = useNavigate();
+    const [showTimeline, setShowTimeline] = useState(false);
+    
+      const handleTimelineViewClick = () => {
+        setShowTimeline(!showTimeline); 
+      };
     const repositories = [
         { id: 'arXiv', name: 'arXiv', score: 46.13 },
         { id: 'PubMed', name: 'PubMed', score: 49.64 },
@@ -37,6 +44,8 @@ const MainPage = () => {
           navigate('/formular-alt-texts');
         };
 
+       
+
   return (
     <div className="MainPage">
         <Header 
@@ -49,10 +58,25 @@ const MainPage = () => {
         <div className="content">
         <section className="chart-section">
           <h3>Repository Score Overview</h3>
-          <p>View the accessibility scores of various repositories at a glance. Hover over the bars for more details.</p>
+          <p>View the accessibility scores of various repositories at a glance. Hover over or click on the bars for more details.</p>
         {/* Bar Chart Section */}
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
-        <div style={{ width: '80%', height: 500 }}>
+        <div style={{ display: 'flex', justifyContent: 'center', position: 'relative',  height: 500}}>
+          {/* Position the Timeline View button */}
+            {/* Adjust the position as needed to fit your exact layout */}
+            <div 
+              style={{ 
+                position: 'absolute', 
+                top: -30,  // Adjust if you have some padding or margin inside the container
+                right: 170, // Adjust if you have some padding or margin inside the container
+                padding: '10px', // Gives some space from the corners
+              }}
+              onClick={handleTimelineViewClick}
+            >
+              <button style={{ cursor: 'pointer' }}>
+                Timeline View
+              </button></div>
+        <div style={{ width: '80%' }}>
+        {!showTimeline && (
           <ResponsiveContainer>
             <BarChart
               data={repositories}
@@ -64,42 +88,31 @@ const MainPage = () => {
               <XAxis dataKey="name" />
               <YAxis />
               <Tooltip />
-              <Bar dataKey="score" fill="#2196f3" barSize={50} />
+              <Bar dataKey="score" fill="#2196f3" barSize={50} onClick={(data) => handleRepoSelect(data.payload.id)}>
+              
+              </Bar>
             </BarChart>
-          </ResponsiveContainer>
+          </ResponsiveContainer>)}
         </div>
+        {/* Absolute Positioned Timeline Chart */}
+        {showTimeline && (
+                <div style={{ position: 'absolute', top: 0, 
+                left: 0,
+                right: 0,
+                bottom: 0,
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center' }}>
+                  <SimpleTimeline />
+                </div>
+              )}
         </div>
+        
         </section>
 
-        <section className="repository-list">
-      <h3>Repositories</h3>
-          <p>Click on any "Details" button for detailed information and score composition.</p>
-          <div className="repo-list">
-            {/* Map through the repositories and display each one */}
-            {repositories.map((repo, index) => (
-              <div key={repo.id} className="repo-item">
-                <div className="repo-label">{repo.name}</div>
-                <div className="progress-container">
-                <div className="progress-bar">
-                  {/* Dynamically set the width of the progress bar based on the progress value */}
-                  <div className="progress" style={{ width: `${repo.score}%` }}></div>
-                </div>
-                <button onClick={() =>  {navigate(`/details/${repo.id}`);}}>Details</button>
-                </div>
-             </div>
-        ))}
-          </div>
-          </section>
 
-        <section className="additional-resources">
-          <h3>Repository Trends</h3>
-          <p>View the score changes over recent years for these repositories.</p>
-          <div className="timeline-button-container">
-          <button className="timeline-btn" onClick={() => navigate('/timeline')}>Check Timeline</button>
-          </div>
-        </section>
+        </div>
 
-       </div>
        <footer className="footer">
           <p>Have any problems with our APP?</p>
           <a href="mailto:renjun.tang@uzh.ch?subject=Feedback%20on%20Accessibility%20Hub&body=Hi%20there,%0D%0A%0D%0AI%20wanted%20to%20share%20some%20feedback..." className="App-link">Contact Us</a>
