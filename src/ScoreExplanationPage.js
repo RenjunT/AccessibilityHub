@@ -45,7 +45,22 @@ const ScoreExplanationPage = () => {
           Each property contributes equally within its category to a subtotal score. 
           The document properties make up 60% of the final score, while object properties account for 40%. This 
           weighted approach ensures a balanced assessment of PDF files' accessibility.</p>
-          
+          {/* Adding an illustrative example */}
+          <div className="example-section">
+                        <h3>Scoring Example</h3>
+                        <p>Let's consider a practical example to understand how our scoring mechanism works:</p>
+                        <ol>
+                            <li><strong>Document Properties:</strong> Assume a file scores 1 for Language Specifier, Tagging Suspects, PDF/UA Identifier, and Metadata Title, but 0 for Heading Order. This gives a Document Properties subtotal of (1+1+1+1+0)/5 = 0.8.</li>
+                            <li><strong>Object Properties:</strong> Let's say the file scores 1 for Correctly Marked Content, Figures with Alt Text, and Tables with Headers, but 0 for Formulas with Alt Text. This gives an Object Properties subtotal of (1+1+1+0)/4 = 0.75.</li>
+                            <li><strong>Final Score:</strong> Applying the weights, we get a final score of (0.8 * 60%) + (0.75 * 40%) = 0.78 or 78%.</li>
+                        </ol>
+                        <p>This example demonstrates how each criterion's score contributes to the final accessibility rating of a PDF file.</p>
+                    </div>
+                    <h3>Repository View</h3>
+                        <p>The score of a repository is calculated by the average score of all 1000 PDFs we retrived from the repository.</p>
+                    <h3>Timeline View</h3>
+                        <p>The score of a year from a repository is calculated by the average score of PDFs from that year.</p>
+                        
         </section>
         
       </main>
