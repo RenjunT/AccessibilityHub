@@ -27,9 +27,9 @@ function SimpleTimeline() {
     <div className="timeline-chart">
         <ResponsiveContainer width="100%" height={450} >
       <LineChart data={data} >
-        <CartesianGrid stroke="#ccc" />
+        <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="year" />
-        <YAxis />
+        <YAxis domain={[0, 100]}/>
         <Tooltip />
         <Line type="monotone" dataKey="arXiv" stroke="#8884d8" />
         <Line type="monotone" dataKey="PubMed" stroke="#82ca9d" />

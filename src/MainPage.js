@@ -62,20 +62,20 @@ const MainPage = () => {
         {/* Bar Chart Section */}
         <div style={{ display: 'flex', justifyContent: 'center', position: 'relative',  height: 500}}>
           {/* Position the Timeline View button */}
-            {/* Adjust the position as needed to fit your exact layout */}
+            
             <div 
               style={{ 
                 position: 'absolute', 
-                top: -30,  // Adjust if you have some padding or margin inside the container
-                right: 170, // Adjust if you have some padding or margin inside the container
+                top: -50,  // Adjust if you have some padding or margin inside the container
+                right: 385, // Adjust if you have some padding or margin inside the container
                 padding: '10px', // Gives some space from the corners
               }}
               onClick={handleTimelineViewClick}
             >
               <button style={{ cursor: 'pointer' }}>
-                Timeline View
+                Change View
               </button></div>
-        <div style={{ width: '80%' }}>
+        <div style={{ width: '50%' }}>
         {!showTimeline && (
           <ResponsiveContainer>
             <BarChart
@@ -86,7 +86,7 @@ const MainPage = () => {
             >
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="name" />
-              <YAxis />
+              <YAxis domain={[0,100]}/>
               <Tooltip />
               <Bar dataKey="score" fill="#2196f3" barSize={50} onClick={(data) => handleRepoSelect(data.payload.id)}>
               
