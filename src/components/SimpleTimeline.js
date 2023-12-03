@@ -22,7 +22,7 @@ function SimpleTimeline() {
   return (
     <div className="timeline-chart">
         <ResponsiveContainer width="100%" height={450} >
-      <LineChart margin={{ top: 0, right: 30, left: 20, bottom: 20 }} data={data} >
+      <LineChart margin={{ top: 0, right: 30, left: 10, bottom: 20 }} data={data} >
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="year" label={{ value: 'Year', position: 'insideBottomRight', offset: -10 }}/>
         <YAxis domain={[0, 5]} ticks={[0, 1, 2, 3, 4, 5]} label={{ value: 'Score', angle: -90, position: 'insideLeft' }}/>
