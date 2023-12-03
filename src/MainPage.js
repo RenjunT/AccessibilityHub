@@ -25,10 +25,10 @@ const MainPage = () => {
         setShowTimeline(!showTimeline); 
       };
     const repositories = [
-        { id: 'arXiv', name: 'arXiv', score: 47.51 },
-        { id: 'PubMed', name: 'PubMed', score: 51.91 },
-        { id: 'SpringerOpen', name: 'SpringerOpen', score: 63.31 },
-        { id: 'IEEEOpen',name: 'IEEEOpen', score: 52.13 }
+        { id: 'arXiv', name: 'arXiv', score: 2.3755},
+        { id: 'PubMed', name: 'PubMed', score: 2.5955},
+        { id: 'SpringerOpen', name: 'SpringerOpen', score: 3.1655 },
+        { id: 'IEEEOpen',name: 'IEEEOpen', score: 2.6065 }
       ];
       const criteriaOptions = ['Figure Alt Texts', 'Formular Alt Texts', 'Table Header'];
       const onNavigate = (path) => {
@@ -81,12 +81,12 @@ const MainPage = () => {
             <BarChart
               data={repositories}
               margin={{
-                top: 20, right: 30, left: 20, bottom: 5,
+                top: 20, right: 30, left: 20, bottom: 15,
               }}
             >
               <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="name" />
-              <YAxis domain={[0,100]}/>
+              <XAxis dataKey="name" label={{ value: 'Repository', position: 'insideBottomRight', offset: -10 }}/>
+              <YAxis domain={[0,5]}  ticks={[0, 1, 2, 3, 4, 5]} label={{ value: 'Score', angle: -90, position: 'insideLeft' }}/>
               <Tooltip />
               <Bar dataKey="score" fill="#2196f3" barSize={50} onClick={(data) => handleRepoSelect(data.payload.id)}>
               
@@ -94,7 +94,7 @@ const MainPage = () => {
             </BarChart>
           </ResponsiveContainer>)}
         </div>
-        {/* Absolute Positioned Timeline Chart */}
+       
         {showTimeline && (
                 <div style={{ position: 'absolute', top: 0, 
                 left: 0,
