@@ -84,8 +84,9 @@ const DetailsPage = () => {
       />
 
         <div className="intro-text">
-                <h2>{id}</h2>
-                <p>This is the detail score fraction from {id}.</p>
+                <h2>Accessibility Trends at {id}</h2>
+                <p>Dive into a detailed view of {id}'s progress in making PDFs accessible over the recent five years. Each line in the chart is color-coded to correspond with a specific criterion. </p>
+                <p><strong>Hover over</strong> any point on the graph to reveal the specific percentage of PDFs that passed a given accessibility criteria. This detailed analysis helps identify trends and areas for potential enhancement in PDF's accessibility. For detailed definitions of each criterion, click on <strong>"Learn How Scoring Works"</strong> in the header. If you wish to return to the main overview, simply click on the <strong>"Accessibility Hub"</strong> logo at any time.</p>
               </div>
       
       <div className="detail-chart">
@@ -103,7 +104,7 @@ const DetailsPage = () => {
         <Line type="monotone" dataKey="ContentMarked" stroke="#63a4ff" />
         <Line type="monotone" dataKey="TagSuspects" stroke="#f56991" />
         <Line type="monotone" dataKey="LanguageSpecifier" stroke="#a0d2db" />
-        <Line type="monotone" dataKey="PDF/UA-Identifier" stroke="#e4c1f9" />
+        <Line type="monotone" dataKey="PDF_UAIdentifier" stroke="#e4c1f9" />
         <Line type="monotone" dataKey="HeadingOrder" stroke="#ffd700" />
         <Line type="monotone" dataKey="MetadataTitle" stroke="#7c5295" />
       </LineChart>
@@ -113,7 +114,7 @@ const DetailsPage = () => {
      
       <footer className="footer">
           <p>Have any problems with our APP?</p>
-          <a href="#mailto:renjun.tang@uzh.ch?subject=Feedback%20on%20Accessibility%20Hub&body=Hi%20there,%0D%0A%0D%0AI%20wanted%20to%20share%20some%20feedback..." className="App-link">Contact Us</a>
+          <a href="mailto:renjun.tang@uzh.ch?subject=Feedback%20on%20Accessibility%20Hub&body=Hi%20there,%0D%0A%0D%0AI%20wanted%20to%20share%20some%20feedback..." className="App-link">Contact Us</a>
           <p>Accessibility Hub does not collect or store any personal information from you.</p>
           
       </footer>

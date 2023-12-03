@@ -41,7 +41,7 @@ const ScoreExplanationPage = () => {
            <h3>Document Properties (60% of the final score):</h3>
           <ul>
             <li><strong>Language Specifiers:</strong> Ensures the language of the document is correctly specified for screen readers.</li>
-            <li><strong>Tagging Suspects:</strong> Checks for potential issues in tagging which could affect content interpretation.</li>
+            <li><strong>Tag Suspects:</strong> Checks for potential issues in tagging which could affect content interpretation.</li>
             <li><strong>PDF/UA Identifiers:</strong> Verifies the presence of a PDF/UA identifier indicating conformance to accessibility standards.</li>
             <li><strong>Valid Heading Order:</strong> Ensure the numbered heading levels are in descending sequence one by one, instead of Heading3 follows directly after Heading1.</li>
             <li><strong>Metadata Title:</strong> Checks if the metadata contains 'dc:title', which helps screen reader users identify and search for the PDF file.</li>
@@ -59,7 +59,7 @@ const ScoreExplanationPage = () => {
                         <h3>Scoring Example</h3>
                         <p>Let's consider a practical example to understand how our scoring mechanism works:</p>
                         <ol>
-                            <li><strong>Document Properties:</strong> Assume a file scores 1 for Language Specifier, Tagging Suspects, PDF/UA Identifier, and Metadata Title, but 0 for Heading Order. This gives a Document Properties subtotal of (1+1+1+1+0)/5 = 0.8.</li>
+                            <li><strong>Document Properties:</strong> Assume a file scores 1 for Language Specifier, Tag Suspects, PDF/UA Identifier, and Metadata Title, but 0 for Heading Order. This gives a Document Properties subtotal of (1+1+1+1+0)/5 = 0.8.</li>
                             <li><strong>Object Properties:</strong> Let's say the file scores 1 for Correctly Marked Content, Figures with Alt Text, and Tables with Headers, but 0 for Formulas with Alt Text. This gives an Object Properties subtotal of (1+1+1+0)/4 = 0.75.</li>
                             <li><strong>Final Score:</strong> Applying the weights, we get a final score of (0.8 * 60%) + (0.75 * 40%) = 0.78 or 78%.</li>
                         </ol>

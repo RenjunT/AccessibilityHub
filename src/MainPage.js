@@ -53,11 +53,14 @@ const MainPage = () => {
 
         <div className="content">
         <section className="chart-section">
-          <h3>Repository Score Overview</h3>
-          <p>View the accessibility scores of various repositories at a glance. Hover over or click on the bars for more details.</p>
+          <h2>Repository Score Overview</h2>
+          <p>Quickly compare how different repositories measure up in terms of accessibility. </p>
+    <p><strong>Hover over</strong> the bars for a snapshot or <strong>click</strong> for in-depth details. 
+    Use the toggle below to switch between the <strong>Bar Chart View</strong> and the 
+    <strong>Timeline View</strong> for different perspectives.</p>
         
         </section>
-        <div style={{ display: 'flex' }}>
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
         <ToggleButtonGroup type="radio" name="views" defaultValue="barChart">
           <ToggleButton
             id="tbg-radio-1"

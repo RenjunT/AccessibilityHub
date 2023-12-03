@@ -36,29 +36,13 @@
     background-color: #fff;
     color: #2196f3;
     cursor: pointer;
+    font-family: 'Segoe UI';
+    font-size: 16px;
   }
   
   .nav-btn:hover {
     background-color: #e3f2fd;
   }
   
-  /* Adjust the dropdown styles if necessary */
-  .dropdown-menu {
-    /* Styles for dropdown menu */
-  }
   
-  .dropdown-item {
-    /* Styles for dropdown items */
-  }
-
-  
-  .filter-button {
-    background-color: #ffffff;
-    border: 2px solid #2196f3;
-    border-radius: 20px;
-    padding: 5px 40px;
-    width: 200px;
-    font-size: larger;
-    cursor: pointer;
-  }
   
