@@ -35,16 +35,25 @@ const ScoreExplanationPage = () => {
       <main className="main-content">
         <section className="explanation-section">
           <h2>How we score the PDFs</h2>
-          <p>Our scoring mechanism evaluates the accessibility of the PDFs based on 9 key criteria, 
+          <p>Our scoring mechanism evaluates the accessibility of the PDFs based on 9 binary criteria, 
           divided into 2 categories: document properties and object properties according to the 
-           <a href={matterhornProtocolUrl} target="_blank" rel="noopener noreferrer"> Matterhorn Protocol</a>. Document properties include 
-          language specifier, tagging suspects, PDF/UA identifier, heading order, and metadata title. Object 
-          properties assess whether content is marked correctly, figures have alt text, tables include headers, 
-          and formulas have alt text. 
-          
-          Each property contributes equally within its category to a subtotal score. 
-          The document properties make up 60% of the final score, while object properties account for 40%. This 
-          weighted approach ensures a balanced assessment of PDF files' accessibility.</p>
+           <a href={matterhornProtocolUrl} target="_blank" rel="noopener noreferrer"> Matterhorn Protocol</a>. For each criterion, a PDF either meets the standard (scored as 1) or does not (scored as 0). </p>
+           <h3>Document Properties (60% of the final score):</h3>
+          <ul>
+            <li><strong>Language Specifiers:</strong> Ensures the language of the document is correctly specified for screen readers.</li>
+            <li><strong>Tagging Suspects:</strong> Checks for potential issues in tagging which could affect content interpretation.</li>
+            <li><strong>PDF/UA Identifiers:</strong> Verifies the presence of a PDF/UA identifier indicating conformance to accessibility standards.</li>
+            <li><strong>Valid Heading Order:</strong> Ensure the numbered heading levels are in descending sequence one by one, instead of Heading3 follows directly after Heading1.</li>
+            <li><strong>Metadata Title:</strong> Checks if the metadata contains 'dc:title', which helps screen reader users identify and search for the PDF file.</li>
+          </ul>
+          <h3>Object Properties (40% of the final score):</h3>
+          <ul>
+            <li><strong>Content Marked:</strong> Assesses if all content (e.g. paragraphs) is marked so that it is rendered "visible" to screen reader users.</li>
+            <li><strong>Figure Alternative Texts:</strong> Checks if figures in the file is tagged with alternative texts, which is nessecery to help screen reader users understand the figure content.</li>
+            <li><strong>Formular Alternative Texts:</strong> Checks if formulars in the file is tagged with alternative texts, to help screen reader users understand the formular correctly.</li>
+            <li><strong>Table Headers:</strong> Assesses if tables in the file have headers so that screen reader users can understand the table correctly.</li>
+          </ul>
+          <p>The final score of a PDF is a weighted sum of these criteria, with document properties contributing 60% and object properties 40%. This balance reflects the greater impact of document properties on accessibility for screen-reader users.</p>
           {/* Adding an illustrative example */}
           <div className="example-section">
                         <h3>Scoring Example</h3>
@@ -57,9 +66,9 @@ const ScoreExplanationPage = () => {
                         <p>This example demonstrates how each criterion's score contributes to the final accessibility rating of a PDF file.</p>
                     </div>
                     <h3>Repository View</h3>
-                        <p>The score of a repository is calculated by the average score of all 1000 PDFs we retrived from the repository.</p>
+                        <p>The score of a repository is calculated by the average score of all the PDFs we retrived from the repository. This provides an overall measure of the repository's accessibility.</p>
                     <h3>Timeline View</h3>
-                        <p>The score of a year from a repository is calculated by the average score of PDFs from that year.</p>
+                        <p>The score of a year from a repository is calculated by the average score of PDFs published in that year, giving insight into accessibility trends over time.</p>
                         
         </section>
         

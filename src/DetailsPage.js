@@ -10,15 +10,15 @@ const fetchDetails = (id) => {
   // For demonstration, it returns different data sets based on the ID
   const datasets = {
     'arXiv': [
-      { year: 2016, formula: 40, figure: 24, table: 24 },
-      { year: 2017, formula: 30, figure: 13, table: 22 },
-      { year: 2018, formula: 60, figure: 10, table: 23 }
+      { year: 2021, formula: 1, figure: 0.94, table: 0.94, content:0.06},
+      { year: 2022, formula: 1, figure: 0.84, table: 0.84, content:0.33 },
+      { year: 2023, formula: 1, figure: 0.94, table: 1, content:0.05}
       // ... rest of data
     ],
-    'pubMed': [
-      { year: 2016, formula: 40, figure: 24, table: 24 },
-      { year: 2017, formula: 30, figure: 13, table: 22 },
-      { year: 2018, formula: 60, figure: 10, table: 23 }
+    'PubMed': [
+      { year: 2021, formula: 1, figure: 0.97, table: 0.99, content:0.003},
+      { year: 2022, formula: 1, figure: 0.84, table: 0.84, content:0.33 },
+      { year: 2023, formula: 1, figure: 0.94, table: 1, content:0.05}
       
     ],
     // ... other datasets
@@ -75,12 +75,13 @@ const DetailsPage = () => {
       <BarChart width={800} height={450} data={detailsData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="year" />
-        <YAxis />
+        <YAxis domain={[0, 4]}/>
         <Tooltip />
         <Legend />
         <Bar dataKey="formula" stackId="a" fill="#1e2f97" barSize={50}/>
         <Bar dataKey="figure" stackId="a" fill="#1aa7ec" barSize={50}/>
         <Bar dataKey="table" stackId="a" fill="#4adede" barSize={50}/>
+        <Bar dataKey="content" stackId="a" fill="#ffcc99" barSize={50}/>
       </BarChart>
       </div>
      

@@ -25,10 +25,10 @@ const MainPage = () => {
         setShowTimeline(!showTimeline); 
       };
     const repositories = [
-        { id: 'arXiv', name: 'arXiv', score: 46.13 },
-        { id: 'PubMed', name: 'PubMed', score: 49.64 },
-        { id: 'SpringerOpen', name: 'SpringerOpen', score: 64 },
-        { id: 'MedRxiv',name: 'MedRxiv', score: 42 }
+        { id: 'arXiv', name: 'arXiv', score: 47.51 },
+        { id: 'PubMed', name: 'PubMed', score: 51.91 },
+        { id: 'SpringerOpen', name: 'SpringerOpen', score: 63.31 },
+        { id: 'IEEEOpen',name: 'IEEEOpen', score: 52.13 }
       ];
       const criteriaOptions = ['Figure Alt Texts', 'Formular Alt Texts', 'Table Header'];
       const onNavigate = (path) => {
