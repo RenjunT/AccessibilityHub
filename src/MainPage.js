@@ -7,6 +7,7 @@ import {useNavigate} from 'react-router-dom';
 import Dropdown from 'react-bootstrap/Dropdown';
 import Timeline from './Timeline'
 import SimpleTimeline from './components/SimpleTimeline';
+import { ToggleButtonGroup, ToggleButton } from 'react-bootstrap';
 import DetailsPage from './DetailsPage'
 import ScoreExplanationPage from './ScoreExplanationPage';
 import FilterModal from './FilterModal'
@@ -17,13 +18,8 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
     
 const MainPage = () => {
-    
+    const [viewType, setViewType] = useState('barChart');
     const navigate = useNavigate();
-    const [showTimeline, setShowTimeline] = useState(false);
-    
-      const handleTimelineViewClick = () => {
-        setShowTimeline(!showTimeline); 
-      };
     const repositories = [
         { id: 'arXiv', name: 'arXiv', score: 2.3755},
         { id: 'PubMed', name: 'PubMed', score: 2.5955},
@@ -59,57 +55,52 @@ const MainPage = () => {
         <section className="chart-section">
           <h3>Repository Score Overview</h3>
           <p>View the accessibility scores of various repositories at a glance. Hover over or click on the bars for more details.</p>
-        {/* Bar Chart Section */}
-        <div style={{ display: 'flex', justifyContent: 'center', position: 'relative',  height: 500}}>
-          {/* Position the Timeline View button */}
-            
-            <div 
-              style={{ 
-                position: 'absolute', 
-                top: -50,  // Adjust if you have some padding or margin inside the container
-                right: 385, // Adjust if you have some padding or margin inside the container
-                padding: '10px', // Gives some space from the corners
-              }}
-              onClick={handleTimelineViewClick}
-            >
-              <button style={{ cursor: 'pointer' }}>
-                Change View
-              </button></div>
-        <div style={{ width: '50%' }}>
-        {!showTimeline && (
-          <ResponsiveContainer>
-            <BarChart
-              data={repositories}
-              margin={{
-                top: 20, right: 30, left: 20, bottom: 15,
-              }}
-            >
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="name" label={{ value: 'Repository', position: 'insideBottomRight', offset: -10 }}/>
-              <YAxis domain={[0,5]}  ticks={[0, 1, 2, 3, 4, 5]} label={{ value: 'Score', angle: -90, position: 'insideLeft' }}/>
-              <Tooltip />
-              <Bar dataKey="score" fill="#2196f3" barSize={50} onClick={(data) => handleRepoSelect(data.payload.id)}>
-              
-              </Bar>
-            </BarChart>
-          </ResponsiveContainer>)}
-        </div>
-       
-        {showTimeline && (
-                <div style={{ position: 'absolute', top: 0, 
-                left: 0,
-                right: 0,
-                bottom: 0,
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center' }}>
-                  <SimpleTimeline />
-                </div>
-              )}
-        </div>
         
         </section>
+        <div style={{ display: 'flex' }}>
+        <ToggleButtonGroup type="radio" name="views" defaultValue="barChart">
+          <ToggleButton
+            id="tbg-radio-1"
+            value="barChart"
+            checked={viewType === 'barChart'}
+            onChange={(e) => setViewType(e.currentTarget.value)}
+          >
+            Bar Chart View
+          </ToggleButton>
+          <ToggleButton
+            id="tbg-radio-2"
+            value="timeline"
+            checked={viewType === 'timeline'}
+            onChange={(e) => setViewType(e.currentTarget.value)}
+          >
+            Timeline View
+          </ToggleButton>
+        </ToggleButtonGroup>
+        </div>
+        {viewType === 'barChart' && (
+          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '450px' }}>
+          <ResponsiveContainer width="50%" height={450}>
+          <BarChart
+            data={repositories}
+            margin={{
+              top: 20, right: 30, left: 20, bottom: 15,
+            }}
+          >
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="name" label={{ value: 'Repository', position: 'insideBottomRight', offset: -10 }}/>
+            <YAxis domain={[0,5]}  ticks={[0, 1, 2, 3, 4, 5]} label={{ value: 'Score', angle: -90, position: 'insideLeft' }}/>
+            <Tooltip />
+            <Bar dataKey="score" fill="#2196f3" barSize={50} onClick={(data) => handleRepoSelect(data.payload.id)}>
+            
+            </Bar>
+          </BarChart>
+        </ResponsiveContainer>
+        </div>
+        )}
 
+        {viewType === 'timeline' && (
+          <SimpleTimeline/>
+        )}
 
         </div>
 

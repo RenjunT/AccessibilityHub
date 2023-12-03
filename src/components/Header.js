@@ -15,33 +15,7 @@ const Header = ({ repositories, criteriaOptions, handleRepoSelect, handleCriteri
             Learn How Scoring Works
           </button>
 
-          {/* Dropdown for selecting repository */}
-          <Dropdown align="end">
-            <Dropdown.Toggle variant="success" id="dropdown-repository" className="nav-btn">
-              Select Repository
-            </Dropdown.Toggle>
-            <Dropdown.Menu>
-              {repositories.map((repo) => (
-                <Dropdown.Item key={repo.id} onClick={() => handleRepoSelect(repo.id)}>
-                  {repo.name}
-                </Dropdown.Item>
-              ))}
-            </Dropdown.Menu>
-          </Dropdown>
-
-          {/* Dropdown for selecting criteria */}
-          <Dropdown align="end">
-            <Dropdown.Toggle variant="success" id="dropdown-criteria" className="nav-btn">
-              Select Criteria
-            </Dropdown.Toggle>
-            <Dropdown.Menu>
-              {criteriaOptions.map((criteria, index) => (
-                <Dropdown.Item key={index} onClick={() => handleCriteriaSelect(criteria)}>
-                  {criteria}
-                </Dropdown.Item>
-              ))}
-            </Dropdown.Menu>
-          </Dropdown>
+          
         </nav>
 
       
