@@ -23,8 +23,8 @@ const MainPage = () => {
     const repositories = [
         { id: 'arXiv', name: 'arXiv', score: 2.3755},
         { id: 'PubMed', name: 'PubMed', score: 2.5955},
-        { id: 'SpringerOpen', name: 'SpringerOpen', score: 3.1655 },
-        { id: 'IEEEOpen',name: 'IEEEOpen', score: 2.6065 }
+        { id: 'Springer', name: 'Springer', score: 3.1655 },
+        { id: 'IEEE',name: 'IEEE', score: 2.6065 }
       ];
       const criteriaOptions = ['Figure Alt Texts', 'Formular Alt Texts', 'Table Header'];
       const onNavigate = (path) => {
@@ -52,7 +52,7 @@ const MainPage = () => {
       />
 
         <div className="content">
-        <section className="chart-section">
+        <section className="chart-section">     
           <h2>Repository Score Overview</h2>
           <p>Quickly compare how different repositories measure up in terms of accessibility. </p>
     <p><strong>Hover over</strong> the bars for a snapshot or <strong>click</strong> for in-depth details. 

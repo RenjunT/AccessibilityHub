@@ -5,15 +5,15 @@ import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, ResponsiveContai
 const data = [ 
     /* Sample data format */
     
-    { "year": "2015", "arXiv": 2.314, "PubMed": 2.6095, "SpringerOpen": 3.3, "IEEEOpen": 2.7 },
-  { "year": "2016", "arXiv": 2.8885, "PubMed": 2.598, "SpringerOpen": 3.184, "IEEEOpen": 2.7 },
-  { "year": "2017", "arXiv": 2.371, "PubMed": 2.5935, "SpringerOpen": 3.168, "IEEEOpen": 2.6 },
-  { "year": "2018", "arXiv": 2.5425, "PubMed": 2.6115, "SpringerOpen": 3.179, "IEEEOpen": 2.7 },
-  { "year": "2019", "arXiv": 2.292, "PubMed": 2.599, "SpringerOpen": 3.2185, "IEEEOpen": 2.575 },
-  { "year": "2020", "arXiv": 2.8, "PubMed": 2.6105, "SpringerOpen": 2.645, "IEEEOpen": 2.5865 },
-  { "year": "2021", "arXiv": 2.1945, "PubMed": 2.6065, "SpringerOpen": 3.3, "IEEEOpen": 2.5725 },
-  { "year": "2022", "arXiv": 2.1785, "PubMed": 2.582, "SpringerOpen": 3.1535, "IEEEOpen": 2.6035 },
-  { "year": "2023", "arXiv": 2.114, "PubMed": 2.5955, "SpringerOpen": 3.1635, "IEEEOpen": 2.6 }
+    { "year": "2015", "arXiv": 2.314, "PubMed": 2.6095, "Springer": 3.3, "IEEE": 2.7 },
+  { "year": "2016", "arXiv": 2.8885, "PubMed": 2.598, "Springer": 3.184, "IEEE": 2.7 },
+  { "year": "2017", "arXiv": 2.371, "PubMed": 2.5935, "Springer": 3.168, "IEEE": 2.6 },
+  { "year": "2018", "arXiv": 2.5425, "PubMed": 2.6115, "Springer": 3.179, "IEEE": 2.7 },
+  { "year": "2019", "arXiv": 2.292, "PubMed": 2.599, "Springer": 3.2185, "IEEE": 2.575 },
+  { "year": "2020", "arXiv": 2.8, "PubMed": 2.6105, "Springer": 2.645, "IEEE": 2.5865 },
+  { "year": "2021", "arXiv": 2.1945, "PubMed": 2.6065, "Springer": 3.3, "IEEE": 2.5725 },
+  { "year": "2022", "arXiv": 2.1785, "PubMed": 2.582, "Springer": 3.1535, "IEEE": 2.6035 },
+  { "year": "2023", "arXiv": 2.114, "PubMed": 2.5955, "Springer": 3.1635, "IEEE": 2.6 }
 ];
 
 
@@ -29,8 +29,8 @@ function SimpleTimeline() {
         <Tooltip />
         <Line type="monotone" dataKey="arXiv" stroke="#8884d8" />
         <Line type="monotone" dataKey="PubMed" stroke="#82ca9d" />
-        <Line type="monotone" dataKey="SpringerOpen" stroke="#ff8c42" />
-        <Line type="monotone" dataKey="IEEEOpen" stroke="#63a4ff" />
+        <Line type="monotone" dataKey="Springer" stroke="#ff8c42" />
+        <Line type="monotone" dataKey="IEEE" stroke="#63a4ff" />
       </LineChart>
       </ResponsiveContainer>
     </div>
