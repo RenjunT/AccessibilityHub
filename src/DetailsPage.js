@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import {useNavigate} from 'react-router-dom';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
+import { XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 import { ToggleButtonGroup, ToggleButton } from 'react-bootstrap';
 import { LineChart, Line, ResponsiveContainer } from 'recharts';
 import './DetailsPage.css';
@@ -93,17 +93,20 @@ const DetailsPage = () => {
 
   const renderChart = (category) => {
     return (
+      
       <ResponsiveContainer width="60%" height={450}>
         <LineChart data={detailsData} margin={{ top: 5, right: 30, left: 20, bottom: 20 }}>
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="year" label={{ value: 'Year', position: 'insideBottomRight', offset: -10 }} />
           <YAxis domain={[0, 100]} label={{ value: 'Percentage(%)', angle: -90, position: 'insideLeft' }}/>
           <Tooltip />
+          <Legend verticalAlign="middle" align="right" layout="vertical" wrapperStyle={{ top: 140, right: -30 }}/>
           {categoryKeys[category].map(key => (
             <Line type="monotone" dataKey={key} stroke={colorMap[key]}  key={key} />
           ))}
         </LineChart>
       </ResponsiveContainer>
+      
     );
   };
 

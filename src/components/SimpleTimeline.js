@@ -1,5 +1,5 @@
 import React from 'react';
-import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
+import { LineChart, Line, CartesianGrid, XAxis, YAxis, Legend, Tooltip, ResponsiveContainer } from 'recharts';
 
 // Sample data for the line chart
 const data = [ 
@@ -27,6 +27,7 @@ function SimpleTimeline() {
         <XAxis dataKey="year" label={{ value: 'Year', position: 'insideBottomRight', offset: -10 }}/>
         <YAxis domain={[0, 5]} ticks={[0, 1, 2, 3, 4, 5]} label={{ value: 'Score', angle: -90, position: 'insideLeft' }}/>
         <Tooltip />
+        <Legend verticalAlign="middle" align="right" layout="vertical" wrapperStyle={{ top: 140, right: -30 }}/>
         <Line type="monotone" dataKey="arXiv" stroke="#8884d8" />
         <Line type="monotone" dataKey="PubMed" stroke="#82ca9d" />
         <Line type="monotone" dataKey="Springer" stroke="#ff8c42" />
