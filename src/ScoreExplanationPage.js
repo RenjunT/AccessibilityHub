@@ -64,7 +64,9 @@ const ScoreExplanationPage = () => {
             <Tooltip content={renderCustomTooltip} />
             <Legend />
           </PieChart>
+          
           </div>
+          <p className="chart-caption">Figure: Distribution of scoring criteria categories.</p>
           
           <h3>Meta Data (20% of the final score):</h3>
         <ul>

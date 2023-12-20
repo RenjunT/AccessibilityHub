@@ -129,7 +129,8 @@ const DetailsPage = () => {
         <div className="intro-text">
                 <h2>Accessibility Trends at {id}</h2>
                 <p>Dive into a detailed view of {id}'s progress in making PDFs accessible over the recent five years. Each line in the chart is color-coded to correspond with a specific criterion. </p>
-                <p><strong>Hover over</strong> any point on the graph to reveal the specific percentage of PDFs that passed a given accessibility criteria. This detailed analysis helps identify trends and areas for potential enhancement in PDF's accessibility. For detailed definitions of each criterion, click on <strong>"Learn How Scoring Works"</strong> in the header. If you wish to return to the main overview, simply click on the <strong>"Accessibility Hub"</strong> logo at any time.</p>
+                <p>Use the <strong>radio buttons</strong> below to interact with the chart and discover detailed trends across three criteria categories: Metadata, Tags, and Objects. Select each option to view a focused analysis. This interactive feature allows you to concentrate on one category at a time, providing a clearer view of the advancements and areas that need attention.</p>
+                <p><strong>Hover over</strong> any point on the graph to reveal the specific percentage of PDFs that passed a given accessibility criteria. This helps identify trends and areas for potential enhancement in PDF's accessibility. For detailed definitions of each criterion, click on <strong>"Learn How Scoring Works"</strong> in the header. If you wish to return to the main overview, simply click on the <strong>"Accessibility Hub"</strong> logo at any time.</p>
               </div>
         <div style={{ display: 'flex', justifyContent: 'center' }}>
         <ToggleButtonGroup type="radio" name="categories" defaultValue="metadata">

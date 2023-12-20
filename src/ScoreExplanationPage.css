@@ -13,6 +13,12 @@
     margin-bottom: 1rem;
     /* Add more styles to match the design */
   }
-  
+  .chart-caption {
+    
+    text-align: center;
+    
+    margin-top: 10px;
+    font-style: italic;
+  }
 
   
