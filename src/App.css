@@ -3,6 +3,25 @@ body, html {
   margin: 0;
 }
 
+.page-layout {
+  display: flex;
+  justify-content: space-between;
+}
+
+.app-description {
+  flex: 1; /* Adjust flex value as needed to set the width of the description */
+  margin-right: 20px; 
+  margin-left: 6px;
+  padding: 30px;/* Space between the description and the main content */
+  text-align: justify; 
+  border-right: 2px solid #ddd; /* A subtle border */
+  max-width: 400px;
+}
+
+.content {
+  flex: 3; /* Adjust flex value as needed to set the width of the main content */
+}
+
 .content {
   position: relative;
   display: flex;

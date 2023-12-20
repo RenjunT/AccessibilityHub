@@ -51,6 +51,14 @@ const MainPage = () => {
         handleCriteriaSelect={handleCriteriaSelect} 
       />
 
+    <div className="page-layout">
+    <aside className="app-description">
+      <h2>About Accessibility Hub</h2>
+      <p>Accessibility Hub is a tool visualizing the accessibility of PDFs in academic online repositories. 4,000 scientific articles in four databases (<a href="https://arxiv.org" target="_blank" rel="noopener noreferrer">arXiv</a>, <a href="https://pubmed.ncbi.nlm.nih.gov" target="_blank" rel="noopener noreferrer">PubMed</a>, <a href="https://www.springeropen.com/" target="_blank" rel="noopener noreferrer">Springer</a>, and <a href="https://open.ieee.org/" target="_blank" rel="noopener noreferrer">IEEE</a>) were evaluated along <Link to="/score-explanation">12 criteria</Link> which resulted in an accessibility score for each repository.</p>
+       <p> This score aids in comparing the level of accessibility between repositories, as well as across time. </p>
+      <p>Additionally, a detailed breakdown of scores for each repository highlights which criteria were fulfilled and which were not. Our tool enables academia, libraries, and online repositories to identify accessibility gaps as well as progress in their efforts to make scientific publications more inclusive for people with disabilities.</p>
+      
+    </aside>
         <div className="content">
         <section className="chart-section">     
           <h2>Repository Score Overview</h2>
@@ -105,6 +113,7 @@ const MainPage = () => {
           <SimpleTimeline/>
         )}
 
+        </div>
         </div>
 
        <footer className="footer">

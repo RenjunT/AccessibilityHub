@@ -53,7 +53,7 @@ const ScoreExplanationPage = () => {
       <main className="main-content">
         <section className="explanation-section">
           <h2>How we score the PDFs</h2>
-          <p>Our scoring mechanism evaluates the accessibility of PDFs based on several criteria across three categories: Metadata, Tags and Objects in the file, in line with the <a href={matterhornProtocolUrl} target="_blank" rel="noopener noreferrer">Matterhorn Protocol</a>. Each criterion is binary, for each criterion, a PDF either meets the standard (scored as 1) or does not (scored as 0). </p>
+          <p>This pie chart below illustrates the weighted contribution of each evaluation category (Metadata, Tags, and Objects) to the overall accessibility score of a PDF. Our scoring mechanism evaluates the accessibility of PDFs based on several criteria across these three categories in the file, in line with the <a href={matterhornProtocolUrl} target="_blank" rel="noopener noreferrer">Matterhorn Protocol</a>. Each criterion is binary, for each criterion, a PDF either meets the standard (scored as 1) or does not (scored as 0). </p>
           <div style={{ display: 'flex', justifyContent: 'center' }}>
           <PieChart width={400} height={400}>
             <Pie data={scoringData} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={150} fill="#8884d8">
@@ -68,28 +68,28 @@ const ScoreExplanationPage = () => {
           
           <h3>Meta Data (20% of the final score):</h3>
         <ul>
-            <li><strong>Title Set:</strong> Checks if the document's title is properly defined.</li>
-            <li><strong>Language Set:</strong> Ensures the document's language is correctly specified for screen readers.</li>
-            <li><strong>Author Set:</strong> Verifies if the author's information is accurately provided.</li>
-            <li><strong>PDF UA Identifier Set:</strong> Assesses the presence of a PDF/UA identifier for accessibility standards.</li>
+            <li><strong>Title:</strong> Checks if the document's title is properly defined.</li>
+            <li><strong>Language:</strong> Ensures the document's language is correctly specified for screen readers.</li>
+            <li><strong>Author:</strong> Verifies if the author's information is accurately provided.</li>
+            <li><strong>PDF UA Identifier:</strong> Assesses the presence of a PDF/UA identifier for accessibility standards.</li>
         </ul>
 
         <h3>Tags (50% of the final score):</h3>
         <ul>
-            <li><strong>Content Marked:</strong> Evaluates whether all content is properly marked for screen readers.</li>
-            <li><strong>Correct Nesting:</strong> Checks the structural hierarchy of tags for logical organization.</li>
-            <li><strong>Reading Order Set:</strong> Confirms the correct sequence of reading order for content flow.</li>
+            <li><strong>Content Marked:</strong> Evaluates whether all content is marked with a tag for screen readers.</li>
+            <li><strong>Correct Nesting:</strong> Checks the structural hierarchy of tags for logical organization, for example: if a link annotation is correctly nested in a LINK tag.</li>
+            <li><strong>Reading Order:</strong> Confirms the correct sequence of tab order for content flow.</li>
         </ul>
 
         <h3>Objects (30% of the final score):</h3>
         <ul>
-            <li><strong>Alternatives Texts Set (Figures and Formulas):</strong> Verifies alternative texts for visual elements.</li>
-            <li><strong>Valid Heading Order:</strong> Ensures headings follow a proper sequence for structural clarity.</li>
+            <li><strong>Alternatives Texts (Figures and Formulas):</strong> Verifies alternative texts for visual elements.</li>
+            <li><strong>Valid Heading Order:</strong> Ensures headings follow a proper sequence for structural clarity, for example: H2 is after H1 instead of H3 directly following H1.</li>
             <li><strong>Valid Table:</strong> Checks if tables have headers and a coherent structure.</li>
-            <li><strong>Link Text Set:</strong> Assesses if links have descriptive texts for better understanding.</li>
-            <li><strong>Lists:</strong> Evaluates if lists are correctly tagged and have more than one item.</li>
+            <li><strong>Link Texts:</strong> Assesses if links have descriptive texts for better understanding.</li>
+            <li><strong>Lists:</strong> Evaluates if lists in a file are tagged with LI, ensuring screen reader users to navigate with context.</li>
         </ul>
-          <p>The final score of a PDF is a weighted sum of these criteria, with document properties contributing 60% and object properties 40%. This balance reflects the greater impact of document properties on accessibility for screen-reader users.</p>
+          <p>The final score of a PDF is a weighted sum of these criteria, with Meta Data contributing 20%, Tags contributing 50%, and Objects contributing 30% to the overall accessibility score. This distribution reflects the importance of each aspect in ensuring comprehensive accessibility for screen reader users.</p>
           
                     <h3>Repository View</h3>
                         <p>The score of a repository is calculated by the average score of all the PDFs we retrived from the repository. This provides an overall measure of the repository's accessibility.</p>
