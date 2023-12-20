@@ -5,15 +5,15 @@ import { LineChart, Line, CartesianGrid, XAxis, YAxis, Legend, Tooltip, Responsi
 const data = [ 
     /* Sample data format */
     
-    { "year": "2015", "arXiv": 2.314, "PubMed": 2.6095, "Springer": 3.3, "IEEE": 2.7 },
-  { "year": "2016", "arXiv": 2.8885, "PubMed": 2.598, "Springer": 3.184, "IEEE": 2.7 },
-  { "year": "2017", "arXiv": 2.371, "PubMed": 2.5935, "Springer": 3.168, "IEEE": 2.6 },
-  { "year": "2018", "arXiv": 2.5425, "PubMed": 2.6115, "Springer": 3.179, "IEEE": 2.7 },
-  { "year": "2019", "arXiv": 2.292, "PubMed": 2.599, "Springer": 3.2185, "IEEE": 2.575 },
-  { "year": "2020", "arXiv": 2.8, "PubMed": 2.6105, "Springer": 2.645, "IEEE": 2.5865 },
-  { "year": "2021", "arXiv": 2.1945, "PubMed": 2.6065, "Springer": 3.3, "IEEE": 2.5725 },
-  { "year": "2022", "arXiv": 2.1785, "PubMed": 2.582, "Springer": 3.1535, "IEEE": 2.6035 },
-  { "year": "2023", "arXiv": 2.114, "PubMed": 2.5955, "Springer": 3.1635, "IEEE": 2.6 }
+    { "year": "2015", "arXiv": 2.892, "PubMed": 2.0945, "Springer": 2.2895, "IEEE": 2.3355 },
+  { "year": "2016", "arXiv": 2.632, "PubMed": 2.1455, "Springer": 2.122, "IEEE": 2.325 },
+  { "year": "2017", "arXiv": 2.8715, "PubMed": 2.1405, "Springer": 2.1915, "IEEE": 2.4215 },
+  { "year": "2018", "arXiv": 2.792, "PubMed": 2.089, "Springer": 2.2265, "IEEE": 2.237 },
+  { "year": "2019", "arXiv": 2.778, "PubMed": 2.2115, "Springer": 2.2215, "IEEE": 2.182 },
+  { "year": "2020", "arXiv": 2.72, "PubMed": 2.2755, "Springer": 2.128, "IEEE": 2.217 },
+  { "year": "2021", "arXiv": 2.7, "PubMed": 2.1915, "Springer": 2.1813, "IEEE": 2.189 },
+  { "year": "2022", "arXiv": 2.67, "PubMed": 2.301, "Springer": 2.235, "IEEE": 2.23 },
+  { "year": "2023", "arXiv": 2.763, "PubMed": 2.1075, "Springer": 2.442, "IEEE": 2.1315 }
 ];
 
 
@@ -28,10 +28,10 @@ function SimpleTimeline() {
         <YAxis domain={[0, 5]} ticks={[0, 1, 2, 3, 4, 5]} label={{ value: 'Score', angle: -90, position: 'insideLeft' }}/>
         <Tooltip />
         <Legend verticalAlign="middle" align="right" layout="vertical" wrapperStyle={{ top: 140, right: -30 }}/>
-        <Line type="monotone" dataKey="arXiv" stroke="#8884d8" />
-        <Line type="monotone" dataKey="PubMed" stroke="#82ca9d" />
-        <Line type="monotone" dataKey="Springer" stroke="#ff8c42" />
-        <Line type="monotone" dataKey="IEEE" stroke="#63a4ff" />
+        <Line type="monotone" dataKey="arXiv" stroke="#8884d8" strokeWidth={2}/>
+        <Line type="monotone" dataKey="PubMed" stroke="#82ca9d" strokeWidth={2}/>
+        <Line type="monotone" dataKey="Springer" stroke="#ff8c42" strokeWidth={2}/>
+        <Line type="monotone" dataKey="IEEE" stroke="#63a4ff"strokeWidth={2} />
       </LineChart>
       </ResponsiveContainer>
     </div>

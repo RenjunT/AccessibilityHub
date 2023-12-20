@@ -21,10 +21,10 @@ const MainPage = () => {
     const [viewType, setViewType] = useState('barChart');
     const navigate = useNavigate();
     const repositories = [
-        { id: 'arXiv', name: 'arXiv', score: 2.3755},
-        { id: 'PubMed', name: 'PubMed', score: 2.5955},
-        { id: 'Springer', name: 'Springer', score: 3.1655 },
-        { id: 'IEEE',name: 'IEEE', score: 2.6065 }
+        { id: 'arXiv', name: 'arXiv', score: 2.8075},
+        { id: 'PubMed', name: 'PubMed', score: 2.14},
+        { id: 'Springer', name: 'Springer', score: 2.308 },
+        { id: 'IEEE',name: 'IEEE', score: 2.224 }
       ];
       const criteriaOptions = ['Figure Alt Texts', 'Formular Alt Texts', 'Table Header'];
       const onNavigate = (path) => {
