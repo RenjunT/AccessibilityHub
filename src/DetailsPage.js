@@ -17,11 +17,11 @@ const fetchDetails = (id) => {
   // For demonstration, it returns different data sets based on the ID
   const datasets = {
     'arXiv': [
-      { year: 2019, AltTexts: 89, HeadingOrder:100 , Table: 94, Link:39, List: 32,  ContentMarked:40, CorrectNesting:78 , ReadingOrder:39 , LanguageSpecifier: 42, PDF_UAIdentifier: 23, MetadataTitle:32, Author: 75},
-      { year: 2020,  AltTexts: 85, HeadingOrder:99 , Table:88, Link:34, List:34 , ContentMarked:36, CorrectNesting: 81, ReadingOrder:38 , LanguageSpecifier: 43, PDF_UAIdentifier: 20, MetadataTitle:33, Author:77 },
-      { year: 2021,  AltTexts:93 , HeadingOrder: 99, Table: 97, Link:42, List: 27, ContentMarked:33,CorrectNesting: 79, ReadingOrder:34 ,  LanguageSpecifier: 39, PDF_UAIdentifier: 22,  MetadataTitle:33, Author:81  },
-      { year: 2022, AltTexts: 86, HeadingOrder: 97, Table:93 , Link:39, List: 25,  ContentMarked:34, CorrectNesting: 87, ReadingOrder:34 ,  LanguageSpecifier: 38, PDF_UAIdentifier: 14,  MetadataTitle:21, Author: 77 },
-      { year: 2023, AltTexts: 87, HeadingOrder:100 , Table: 94, Link:35, List: 33, ContentMarked:39,CorrectNesting:81 , ReadingOrder:39 ,  LanguageSpecifier: 41, PDF_UAIdentifier: 20,  MetadataTitle:27, Author:76 }
+      { year: 2019, AltTexts: 69, HeadingOrder:100 , Table: 95, Link:69, List: 37,  ContentMarked:79, CorrectNesting:58 , ReadingOrder:74 , LanguageSpecifier: 90, PDF_UAIdentifier: 43, MetadataTitle:43, Author: 90},
+      { year: 2020,  AltTexts: 79, HeadingOrder:100 , Table:87, Link:65, List:40 , ContentMarked:66, CorrectNesting: 61, ReadingOrder:61 , LanguageSpecifier: 61, PDF_UAIdentifier: 40, MetadataTitle:48, Author:79 },
+      { year: 2021,  AltTexts:83 , HeadingOrder: 95, Table: 89, Link:65, List: 59, ContentMarked:33,CorrectNesting: 77, ReadingOrder:80 ,  LanguageSpecifier: 80, PDF_UAIdentifier: 48,  MetadataTitle:53, Author:77  },
+      { year: 2022, AltTexts: 74, HeadingOrder: 100, Table:100 , Link:44, List: 61,  ContentMarked:79, CorrectNesting: 61, ReadingOrder:79 ,  LanguageSpecifier: 83, PDF_UAIdentifier: 40,  MetadataTitle:61, Author: 74 },
+      { year: 2023, AltTexts: 78, HeadingOrder:98 , Table: 94, Link:35, List: 49, ContentMarked:65,CorrectNesting:65, ReadingOrder:63 ,  LanguageSpecifier: 76, PDF_UAIdentifier: 46,  MetadataTitle:54, Author:72 }
     ],
     'PubMed': [
       { year: 2019, AltTexts: 97, HeadingOrder:100, Table: 99, Link:25, List: 3,  ContentMarked:2, CorrectNesting:100 , ReadingOrder:3 , LanguageSpecifier: 47, PDF_UAIdentifier: 0, MetadataTitle:59, Author: 47},
@@ -54,6 +54,7 @@ const DetailsPage = () => {
   let { id } = useParams();
   const [detailsData, setDetailsData] = useState([]);
   const [activeCategory, setActiveCategory] = useState('metadata');
+  const [percentages, setPercentages] = useState({});
   const navigate = useNavigate();
   const matterhornProtocolUrl = "https://www.pdflib.com/pdf-knowledge-base/pdfua/matterhorn-protocol/"; 
 
@@ -61,6 +62,14 @@ const DetailsPage = () => {
     const data = fetchDetails(id);
     setDetailsData(data);
   }, [id]);
+
+  const idPercentages = {
+    'arXiv': 78,
+    'PubMed': 70,
+    'Springer': 80,
+    'IEEE': 70,
+    
+  };
 
   const repositories = [
     { id: 'arXiv', name: 'arXiv', score: 46.13 },
@@ -127,11 +136,12 @@ const DetailsPage = () => {
       />
 
         <div className="intro-text">
-                <h2>Accessibility Trends at {id}</h2>
-                <p>Dive into a detailed view of {id}'s progress in making PDFs accessible over the recent five years. Each line in the chart is color-coded to correspond with a specific criterion. </p>
-                <p>Use the <strong>radio buttons</strong> below to interact with the chart and discover detailed trends across three criteria categories: Metadata, Tags, and Objects. Select each option to view a focused analysis. This interactive feature allows you to concentrate on one category at a time, providing a clearer view of the advancements and areas that need attention.</p>
-                <p><strong>Hover over</strong> any point on the graph to reveal the specific percentage of PDFs that passed a given accessibility criteria. This helps identify trends and areas for potential enhancement in PDF's accessibility. For detailed definitions of each criterion, click on <strong>"Learn How Scoring Works"</strong> in the header. If you wish to return to the main overview, simply click on the <strong>"Accessibility Hub"</strong> logo at any time.</p>
-              </div>
+          <h2>Accessibility Trends at {id}</h2>
+          <p>In {id}, {idPercentages[id]}% of PDFs are not tagged at all. The chart below analyzes the accessibility of those partially tagged.</p>
+          <p>Explore {id}'s five-year progress with interactive charts, highlighting Metadata, Tags, and Objects. <strong>Hover over</strong> chart points for specific data, and use <strong>radio buttons</strong> for detailed analysis.</p>
+          <p>For more on scoring criteria, click <strong>"Learn How Scoring Works"</strong> in the header. To return to the main overview, click the <strong>"Accessibility Hub"</strong> logo.</p>
+        </div>
+
         <div style={{ display: 'flex', justifyContent: 'center' }}>
         <ToggleButtonGroup type="radio" name="categories" defaultValue="metadata">
         {Object.keys(categoryKeys).map(category => (

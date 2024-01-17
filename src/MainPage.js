@@ -21,7 +21,7 @@ const MainPage = () => {
     const [viewType, setViewType] = useState('barChart');
     const navigate = useNavigate();
     const repositories = [
-        { id: 'arXiv', name: 'arXiv', score: 2.8075},
+        { id: 'arXiv', name: 'arXiv', score: 3.35},
         { id: 'PubMed', name: 'PubMed', score: 2.14},
         { id: 'Springer', name: 'Springer', score: 2.308 },
         { id: 'IEEE',name: 'IEEE', score: 2.224 }
@@ -53,11 +53,13 @@ const MainPage = () => {
 
     <div className="page-layout">
     <aside className="app-description">
+      <h2>What is PDF accessibility?</h2>
+      <p>PDF accessibility ensures that documents are structured and tagged for easy navigation and readability by assistive technologies, making them accessible to all users, including those with disabilities.</p>
+      <p><a href="https://webaim.org/techniques/acrobat/" target="_blank" rel="noopener noreferrer">Know more about this...</a></p>
       <h2>About Accessibility Hub</h2>
       <p>Accessibility Hub is a tool visualizing the accessibility of PDFs in academic online repositories. 4,000 scientific articles in four databases (<a href="https://arxiv.org" target="_blank" rel="noopener noreferrer">arXiv</a>, <a href="https://pubmed.ncbi.nlm.nih.gov" target="_blank" rel="noopener noreferrer">PubMed</a>, <a href="https://www.springeropen.com/" target="_blank" rel="noopener noreferrer">Springer</a>, and <a href="https://open.ieee.org/" target="_blank" rel="noopener noreferrer">IEEE</a>) were evaluated along <Link to="/score-explanation">12 criteria</Link> which resulted in an accessibility score for each repository.</p>
        <p> This score aids in comparing the level of accessibility between repositories, as well as across time. </p>
       <p>Additionally, a detailed breakdown of scores for each repository highlights which criteria were fulfilled and which were not. Our tool enables academia, libraries, and online repositories to identify accessibility gaps as well as progress in their efforts to make scientific publications more inclusive for people with disabilities.</p>
-      
     </aside>
         <div className="content">
         <section className="chart-section">     
