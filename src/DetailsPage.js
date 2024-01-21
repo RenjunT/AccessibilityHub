@@ -31,11 +31,11 @@ const fetchDetails = (id) => {
       { year: 2023, AltTexts: 97, HeadingOrder:99 , Table: 97, Link:12, List: 4, ContentMarked:3,CorrectNesting:100 , ReadingOrder:7 ,  LanguageSpecifier: 35, PDF_UAIdentifier: 0,  MetadataTitle:53, Author:21 }
     ],
     'Springer': [
-      { year: 2019, AltTexts: 100, HeadingOrder:100 , Table: 100, Link:11, List: 0,  ContentMarked:0, CorrectNesting:100, ReadingOrder:0 , LanguageSpecifier: 84, PDF_UAIdentifier: 0, MetadataTitle:87, Author: 13},
-      { year: 2020,  AltTexts: 100, HeadingOrder:100 , Table:100, Link:0, List:0 , ContentMarked:0, CorrectNesting: 100, ReadingOrder:0, LanguageSpecifier: 58, PDF_UAIdentifier: 0, MetadataTitle:100, Author:0 },
-      { year: 2021,  AltTexts:100, HeadingOrder: 100, Table: 100, Link:0, List: 0, ContentMarked:0,CorrectNesting: 100, ReadingOrder:0 ,  LanguageSpecifier: 80, PDF_UAIdentifier: 0,  MetadataTitle:100, Author:0 },
-      { year: 2022, AltTexts: 100, HeadingOrder: 100, Table:100, Link:4, List: 0,  ContentMarked:0, CorrectNesting: 100, ReadingOrder:0 ,  LanguageSpecifier: 96, PDF_UAIdentifier: 0,  MetadataTitle:98, Author: 4 },
-      { year: 2023, AltTexts: 99, HeadingOrder:100 , Table: 100, Link:10, List: 5,ContentMarked:8,CorrectNesting:100, ReadingOrder:13 ,  LanguageSpecifier: 98, PDF_UAIdentifier: 0,  MetadataTitle:95, Author:8 }
+      { year: 2019, AltTexts: 100, HeadingOrder:100 , Table: 100, Link:0, List: 0,  ContentMarked:0, CorrectNesting:100, ReadingOrder:0 , LanguageSpecifier: 100, PDF_UAIdentifier: 0, MetadataTitle:87, Author: 0},
+      { year: 2020,  AltTexts: 100, HeadingOrder:100 , Table:100, Link:0, List:0 , ContentMarked:0, CorrectNesting: 100, ReadingOrder:0, LanguageSpecifier: 99, PDF_UAIdentifier: 0, MetadataTitle:100, Author:0 },
+      { year: 2021,  AltTexts:100, HeadingOrder: 100, Table: 100, Link:0, List: 0, ContentMarked:0,CorrectNesting: 100, ReadingOrder:0 ,  LanguageSpecifier: 98, PDF_UAIdentifier: 0,  MetadataTitle:100, Author:0 },
+      { year: 2022, AltTexts: 100, HeadingOrder: 100, Table:100, Link:4, List: 2,  ContentMarked:0, CorrectNesting: 100, ReadingOrder:0 ,  LanguageSpecifier: 100, PDF_UAIdentifier: 0,  MetadataTitle:99, Author: 2 },
+      { year: 2023, AltTexts: 95, HeadingOrder:100 , Table: 100, Link:2, List: 6,ContentMarked:1,CorrectNesting:100, ReadingOrder:3,  LanguageSpecifier: 100, PDF_UAIdentifier: 0,  MetadataTitle:93, Author:7 }
     ],
     'IEEE': [
       { year: 2019, AltTexts: 98, HeadingOrder:99 , Table: 99, Link:52, List: 3,  ContentMarked:3, CorrectNesting:100, ReadingOrder:0 , LanguageSpecifier: 5, PDF_UAIdentifier: 0, MetadataTitle:79, Author: 27},
@@ -64,9 +64,9 @@ const DetailsPage = () => {
   }, [id]);
 
   const idPercentages = {
-    'arXiv': 78,
+    'arXiv': 22,
     'PubMed': 70,
-    'Springer': 80,
+    'Springer': 60,
     'IEEE': 70,
     
   };
@@ -137,7 +137,7 @@ const DetailsPage = () => {
 
         <div className="intro-text">
           <h2>Accessibility Trends at {id}</h2>
-          <p>In {id}, {idPercentages[id]}% of PDFs are not tagged at all. The chart below analyzes the accessibility of those partially tagged.</p>
+          <p>In {id}, only {idPercentages[id]}% of PDFs are partially tagged. The chart below analyzes the accessibility of these partially tagged.</p>
           <p>Explore {id}'s five-year progress with interactive charts, highlighting Metadata, Tags, and Objects. <strong>Hover over</strong> chart points for specific data, and use <strong>radio buttons</strong> for detailed analysis.</p>
           <p>For more on scoring criteria, click <strong>"Learn How Scoring Works"</strong> in the header. To return to the main overview, click the <strong>"Accessibility Hub"</strong> logo.</p>
         </div>

@@ -5,15 +5,15 @@ import { LineChart, Line, CartesianGrid, XAxis, YAxis, Legend, Tooltip, Responsi
 const data = [ 
     /* Sample data format */
     
-    { "year": "2015", "arXiv": 3.02, "PubMed": 2.0945, "Springer": 2.2895, "IEEE": 2.3355 },
-  { "year": "2016", "arXiv": 3.215, "PubMed": 2.1455, "Springer": 2.122, "IEEE": 2.325 },
-  { "year": "2017", "arXiv": 3.45, "PubMed": 2.1405, "Springer": 2.1915, "IEEE": 2.4215 },
-  { "year": "2018", "arXiv": 3.38, "PubMed": 2.089, "Springer": 2.2265, "IEEE": 2.237 },
-  { "year": "2019", "arXiv": 3.515, "PubMed": 2.2115, "Springer": 2.2215, "IEEE": 2.182 },
-  { "year": "2020", "arXiv": 3.15, "PubMed": 2.2755, "Springer": 2.128, "IEEE": 2.217 },
-  { "year": "2021", "arXiv": 3.54, "PubMed": 2.1915, "Springer": 2.1813, "IEEE": 2.189 },
-  { "year": "2022", "arXiv": 3.55, "PubMed": 2.301, "Springer": 2.235, "IEEE": 2.23 },
-  { "year": "2023", "arXiv": 3.25, "PubMed": 2.1075, "Springer": 2.442, "IEEE": 2.1315 }
+    { "year": "2015", "arXiv": 0.863, "PubMed": 2.0945, "Springer": 0.319, "IEEE": 2.3355 },
+  { "year": "2016", "arXiv": 0.846, "PubMed": 2.1455, "Springer": 0.610, "IEEE": 2.325 },
+  { "year": "2017", "arXiv": 0.278, "PubMed": 2.1405, "Springer": 1.340, "IEEE": 2.4215 },
+  { "year": "2018", "arXiv": 0.935, "PubMed": 2.089, "Springer": 1.489, "IEEE": 2.237 },
+  { "year": "2019", "arXiv": 0.955, "PubMed": 2.2115, "Springer": 0.744, "IEEE": 2.182 },
+  { "year": "2020", "arXiv": 0.704, "PubMed": 2.2755, "Springer": 1.048, "IEEE": 2.217 },
+  { "year": "2021", "arXiv": 1.137, "PubMed": 2.1915, "Springer": 1.732, "IEEE": 2.189 },
+  { "year": "2022", "arXiv": 0.897, "PubMed": 2.301, "Springer": 1.985, "IEEE": 2.23 },
+  { "year": "2023", "arXiv": 1.021, "PubMed": 2.1075, "Springer": 2.003, "IEEE": 2.1315 }
 ];
 
 
