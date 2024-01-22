@@ -24,11 +24,11 @@ const fetchDetails = (id) => {
       { year: 2023, AltTexts: 78, HeadingOrder:98 , Table: 94, Link:35, List: 49, ContentMarked:65,CorrectNesting:65, ReadingOrder:63 ,  LanguageSpecifier: 76, PDF_UAIdentifier: 46,  MetadataTitle:54, Author:72 }
     ],
     'PubMed': [
-      { year: 2019, AltTexts: 97, HeadingOrder:100, Table: 99, Link:25, List: 3,  ContentMarked:2, CorrectNesting:100 , ReadingOrder:3 , LanguageSpecifier: 47, PDF_UAIdentifier: 0, MetadataTitle:59, Author: 47},
-      { year: 2020,  AltTexts: 96, HeadingOrder:99 , Table:88, Link:16, List:5 , ContentMarked:10, CorrectNesting: 100, ReadingOrder:12 , LanguageSpecifier: 41, PDF_UAIdentifier: 0, MetadataTitle:50, Author:40 },
-      { year: 2021,  AltTexts:97 , HeadingOrder: 100, Table: 100, Link:13, List: 2,ContentMarked:2,CorrectNesting: 100, ReadingOrder:8 ,  LanguageSpecifier: 50, PDF_UAIdentifier: 0,  MetadataTitle:53, Author:39  },
-      { year: 2022, AltTexts: 96, HeadingOrder: 100, Table:100 , Link:40, List: 0,  ContentMarked:0, CorrectNesting: 100, ReadingOrder:0 ,  LanguageSpecifier: 80, PDF_UAIdentifier: 0,  MetadataTitle:48, Author: 56},
-      { year: 2023, AltTexts: 97, HeadingOrder:99 , Table: 97, Link:12, List: 4, ContentMarked:3,CorrectNesting:100 , ReadingOrder:7 ,  LanguageSpecifier: 35, PDF_UAIdentifier: 0,  MetadataTitle:53, Author:21 }
+      { year: 2019, AltTexts: 95, HeadingOrder:100, Table: 99, Link:16, List: 3,  ContentMarked:0, CorrectNesting:100 , ReadingOrder:0 , LanguageSpecifier: 58, PDF_UAIdentifier: 0, MetadataTitle:64, Author: 48},
+      { year: 2020,  AltTexts: 100, HeadingOrder:99 , Table:100, Link:100, List:8, ContentMarked:16, CorrectNesting: 100, ReadingOrder:16 , LanguageSpecifier: 62, PDF_UAIdentifier: 0, MetadataTitle:47, Author:31 },
+      { year: 2021,  AltTexts: 100, HeadingOrder:100, Table:100, Link:20, List:20 , ContentMarked:1, CorrectNesting: 100, ReadingOrder:0 , LanguageSpecifier: 60, PDF_UAIdentifier: 0, MetadataTitle:40, Author:40  },
+      { year: 2022, AltTexts: 100, HeadingOrder: 100, Table:100 , Link:20, List: 0,  ContentMarked:0, CorrectNesting: 100, ReadingOrder:0 ,  LanguageSpecifier: 50, PDF_UAIdentifier: 0,  MetadataTitle:60, Author: 50},
+      { year: 2023, AltTexts: 99, HeadingOrder:99 , Table: 98, Link:8, List: 6, ContentMarked:3,CorrectNesting:100 , ReadingOrder:8 ,  LanguageSpecifier: 36, PDF_UAIdentifier: 0,  MetadataTitle:45, Author:21 }
     ],
     'Springer': [
       { year: 2019, AltTexts: 100, HeadingOrder:100 , Table: 100, Link:0, List: 0,  ContentMarked:0, CorrectNesting:100, ReadingOrder:0 , LanguageSpecifier: 100, PDF_UAIdentifier: 0, MetadataTitle:87, Author: 0},
@@ -38,11 +38,11 @@ const fetchDetails = (id) => {
       { year: 2023, AltTexts: 95, HeadingOrder:100 , Table: 100, Link:2, List: 6,ContentMarked:1,CorrectNesting:100, ReadingOrder:3,  LanguageSpecifier: 100, PDF_UAIdentifier: 0,  MetadataTitle:93, Author:7 }
     ],
     'IEEE': [
-      { year: 2019, AltTexts: 98, HeadingOrder:99 , Table: 99, Link:52, List: 3,  ContentMarked:3, CorrectNesting:100, ReadingOrder:0 , LanguageSpecifier: 5, PDF_UAIdentifier: 0, MetadataTitle:79, Author: 27},
-      { year: 2020,  AltTexts: 97, HeadingOrder:100 , Table:98, Link:47, List:3 ,ContentMarked:4, CorrectNesting: 100, ReadingOrder:4 , LanguageSpecifier: 7, PDF_UAIdentifier: 0, MetadataTitle:82, Author:32 },
-      { year: 2021,  AltTexts:99 , HeadingOrder: 100, Table: 99, Link:49, List: 2, ContentMarked:2,CorrectNesting: 100, ReadingOrder:4 ,  LanguageSpecifier: 4, PDF_UAIdentifier: 0,  MetadataTitle:75, Author:32  },
-      { year: 2022, AltTexts: 98, HeadingOrder: 99, Table:99 , Link:50, List: 4,  ContentMarked:4, CorrectNesting: 100, ReadingOrder:4 ,  LanguageSpecifier: 5, PDF_UAIdentifier: 0,  MetadataTitle:81, Author: 32 },
-      { year: 2023, AltTexts: 99, HeadingOrder:99 , Table: 99, Link:39, List: 2, ContentMarked:0,CorrectNesting:100 , ReadingOrder:2 ,  LanguageSpecifier: 4, PDF_UAIdentifier: 0,  MetadataTitle:81, Author:27 }
+      { year: 2019, AltTexts: 98, HeadingOrder:99 , Table: 99, Link:52, List: 3,  ContentMarked:3, CorrectNesting:100, ReadingOrder:0 , LanguageSpecifier: 80, PDF_UAIdentifier: 0, MetadataTitle:79, Author: 0},
+      { year: 2020,  AltTexts: 97, HeadingOrder:100 , Table:98, Link:47, List:3 ,ContentMarked:4, CorrectNesting: 100, ReadingOrder:4 , LanguageSpecifier: 50, PDF_UAIdentifier: 0, MetadataTitle:82, Author:32 },
+      { year: 2021,  AltTexts:33 , HeadingOrder: 100, Table: 67, Link:67, List: 43, ContentMarked:33,CorrectNesting: 100, ReadingOrder:67 ,  LanguageSpecifier: 67, PDF_UAIdentifier: 0,  MetadataTitle:75, Author:32  },
+      { year: 2022, AltTexts: 80, HeadingOrder: 99, Table:80 , Link:60, List: 20,  ContentMarked:20, CorrectNesting: 100, ReadingOrder:20 ,  LanguageSpecifier: 20, PDF_UAIdentifier: 0,  MetadataTitle:81, Author: 40 },
+      { year: 2023, AltTexts: 80, HeadingOrder:80 , Table: 60, Link:60, List: 20, ContentMarked:40,CorrectNesting:100 , ReadingOrder:20 ,  LanguageSpecifier: 40, PDF_UAIdentifier: 0,  MetadataTitle:81, Author:80 }
     ],
     
   };
@@ -65,9 +65,9 @@ const DetailsPage = () => {
 
   const idPercentages = {
     'arXiv': 22,
-    'PubMed': 70,
-    'Springer': 60,
-    'IEEE': 70,
+    'PubMed': 38,
+    'Springer': 46,
+    'IEEE': 10,
     
   };
 
@@ -137,7 +137,7 @@ const DetailsPage = () => {
 
         <div className="intro-text">
           <h2>Accessibility Trends at {id}</h2>
-          <p>In {id}, only {idPercentages[id]}% of PDFs are partially tagged. The chart below analyzes the accessibility of these partially tagged.</p>
+          <p>In {id}, only <strong>{idPercentages[id]}%</strong> of PDFs are partially tagged, and the left are not tagged at all. The chart below analyzes the accessibility of these partially tagged.</p>
           <p>Explore {id}'s five-year progress with interactive charts, highlighting Metadata, Tags, and Objects. <strong>Hover over</strong> chart points for specific data, and use <strong>radio buttons</strong> for detailed analysis.</p>
           <p>For more on scoring criteria, click <strong>"Learn How Scoring Works"</strong> in the header. To return to the main overview, click the <strong>"Accessibility Hub"</strong> logo.</p>
         </div>

@@ -22,9 +22,9 @@ const MainPage = () => {
     const navigate = useNavigate();
     const repositories = [
         { id: 'arXiv', name: 'arXiv', score: 0.73},
-        { id: 'PubMed', name: 'PubMed', score: 2.14},
-        { id: 'Springer', name: 'Springer', score: 1.36 },
-        { id: 'IEEE',name: 'IEEE', score: 2.224 }
+        { id: 'PubMed', name: 'PubMed', score: 0.86},
+        { id: 'Springer', name: 'Springer', score: 1.05 },
+        { id: 'IEEE',name: 'IEEE', score: 0.25 }
       ];
       const criteriaOptions = ['Figure Alt Texts', 'Formular Alt Texts', 'Table Header'];
       const onNavigate = (path) => {
