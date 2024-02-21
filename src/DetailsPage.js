@@ -31,11 +31,11 @@ const fetchDetails = (id) => {
       { year: 2023, AltTexts: 99, HeadingOrder:99 , Table: 98, Link:8, List: 6, ContentMarked:3,CorrectNesting:100 , ReadingOrder:8 ,  LanguageSpecifier: 36, PDF_UAIdentifier: 0,  MetadataTitle:45, Author:21 }
     ],
     'Springer': [
-      { year: 2019, AltTexts: 100, HeadingOrder:100 , Table: 100, Link:100, List: 0,  ContentMarked:0, CorrectNesting:100, ReadingOrder:0 , LanguageSpecifier: 100, PDF_UAIdentifier: 0, MetadataTitle:87, Author: 0},
-      { year: 2020,  AltTexts: 100, HeadingOrder:100 , Table:100, Link:100, List:0 , ContentMarked:0, CorrectNesting: 100, ReadingOrder:0, LanguageSpecifier: 99, PDF_UAIdentifier: 0, MetadataTitle:100, Author:0 },
-      { year: 2021,  AltTexts:100, HeadingOrder: 100, Table: 100, Link:100, List: 0, ContentMarked:0,CorrectNesting: 100, ReadingOrder:0 ,  LanguageSpecifier: 98, PDF_UAIdentifier: 0,  MetadataTitle:100, Author:0 },
-      { year: 2022, AltTexts: 100, HeadingOrder: 100, Table:100, Link:0, List: 4,  ContentMarked:0, CorrectNesting: 100, ReadingOrder:0 ,  LanguageSpecifier: 100, PDF_UAIdentifier: 0,  MetadataTitle:99, Author: 2 },
-      { year: 2023, AltTexts: 100, HeadingOrder:100 , Table: 100, Link:33, List: 5,ContentMarked:1,CorrectNesting:100, ReadingOrder:3,  LanguageSpecifier: 100, PDF_UAIdentifier: 0,  MetadataTitle:93, Author:7 }
+      { year: 2019, AltTexts: 50, HeadingOrder:50, Table: 50 , Link:50 , List: 0,  ContentMarked:0, CorrectNesting:100, ReadingOrder:0 , LanguageSpecifier: 100, PDF_UAIdentifier: 0, MetadataTitle:87, Author: 0},
+      { year: 2020,  AltTexts: 50, HeadingOrder:50 , Table:50 , Link:50 , List:0 , ContentMarked:0, CorrectNesting: 100, ReadingOrder:0, LanguageSpecifier: 99, PDF_UAIdentifier: 0, MetadataTitle:100, Author:0 },
+      { year: 2021,  AltTexts:50, HeadingOrder: 50 , Table: 50 , Link:50 , List: 0, ContentMarked:0,CorrectNesting: 100, ReadingOrder:0 ,  LanguageSpecifier: 98, PDF_UAIdentifier: 0,  MetadataTitle:100, Author:0 },
+      { year: 2022, AltTexts: 50, HeadingOrder: 50 , Table:50 , Link:0, List: 4,  ContentMarked:0, CorrectNesting: 100, ReadingOrder:0 ,  LanguageSpecifier: 100, PDF_UAIdentifier: 0,  MetadataTitle:99, Author: 2 },
+      { year: 2023, AltTexts: 50, HeadingOrder:50  , Table: 50 , Link:33, List: 5,ContentMarked:1,CorrectNesting:100, ReadingOrder:3,  LanguageSpecifier: 100, PDF_UAIdentifier: 0,  MetadataTitle:93, Author:7 }
     ],
     'IEEE': [
       { year: 2019, AltTexts: 98, HeadingOrder:99 , Table: 99, Link:52, List: 3,  ContentMarked:3, CorrectNesting:100, ReadingOrder:0 , LanguageSpecifier: 80, PDF_UAIdentifier: 0, MetadataTitle:79, Author: 0},
